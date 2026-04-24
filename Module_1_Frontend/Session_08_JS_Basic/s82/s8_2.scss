@@ -1,0 +1,43 @@
+// Khai báo biến màu sắc cho giống ảnh
+$bg-color: #f07e7e; // Màu nền hồng/đỏ nhạt của cột
+$text-color: #ffffff; // Màu chữ trắng
+
+// Code CSS Reset cơ bản (nếu bạn chưa có ở file main)
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.grid-container {
+  display: grid;
+  gap: 20px; // Khoảng cách giữa các cột
+  padding: 20px; // Khoảng cách từ lề vào container
+
+  // 1. GIAO DIỆN MẶC ĐỊNH (MOBILE - ĐIỆN THOẠI)
+  // Hiển thị 1 cột duy nhất, chiếm 100% không gian
+  grid-template-columns: 1fr;
+
+  // 2. GIAO DIỆN KHI CO LẠI (TABLET - MÀN HÌNH VỪA)
+  // Khi màn hình rộng từ 768px trở lên -> Chuyển thành 2 cột
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr); // Tạo 2 cột, mỗi cột 1 phần (1fr)
+  }
+
+  // 3. GIAO DIỆN MÁY TÍNH (DESKTOP)
+  // Khi màn hình rộng từ 1024px trở lên -> Chuyển thành 4 cột
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr); // Tạo 4 cột, mỗi cột 1 phần
+  }
+}
+
+// Trang trí cho các cột đẹp giống trong ảnh
+.grid-item {
+  background-color: $bg-color;
+  color: $text-color;
+  padding: 30px 20px;
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: 500;
+  border-radius: 4px; // Tùy chọn: Bo tròn nhẹ góc cho đẹp
+}

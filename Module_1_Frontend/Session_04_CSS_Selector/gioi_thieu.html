@@ -1,0 +1,92 @@
+<!doctype html>
+<!-- <html>: ドキュメントルート / Gốc tài liệu bao toàn bộ file -->
+<html lang="vi">
+  <head>
+    <!-- <head>: メタ情報 / Chứa meta, title và CSS chung -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giới thiệu</title>
+    <link rel="stylesheet" href="./common.css" />
+  </head>
+  <body>
+    <!-- <body>: 本文(ほんぶん) (Phần thân tài liệu)
+         1. Chức năng: Chứa toàn bộ nội dung hiển thị chính của trang web.
+         2. Lý do: Là không gian làm việc chính của DOM để hiển thị các thành phần UI.
+         3. Lưu ý: Mọi phần tử giao diện đều phải nằm trong thẻ này. -->
+    <div class="page-shell">
+      <header class="site-header">
+        <!-- <header>: ヘッダー(へっだー) (Phần đầu trang)
+             1. Chức năng: Chứa các thành phần giới thiệu chung và điều hướng (logo, menu).
+             2. Lý do: Giúp người dùng dễ dàng nhận diện thương hiệu và di chuyển trong website.
+             3. Lưu ý: Không nên chứa nội dung chính của bài viết. -->
+        <div class="brand">RIKKEI 3D Studio</div>
+        <nav class="main-nav">
+          <a href="./s4_btvn_1.html">Trang chủ</a>
+          <a href="./gioi_thieu.html" class="active">Giới thiệu</a>
+          <a href="#">Sản phẩm</a>
+          <a href="./s4_form.html">Liên hệ</a>
+        </nav>
+      </header>
+
+      <main class="page-main">
+        <!-- <main>: メイン(めいん) (Nội dung chính)
+             1. Chức năng: Đóng gói vùng nội dung cốt lõi, độc nhất của trang.
+             2. Lý do: Tối ưu SEO và giúp các công cụ đọc màn hình nhận diện được nội dung chính.
+             3. Lưu ý: Mỗi trang chỉ nên có duy nhất một thẻ main. -->
+        <section class="content-block">
+          <!-- <section>: セクション(せくしょん) (Phần nội dung)
+               1. Chức năng: Chia trang thành các khu vực nội dung độc lập có chủ đề riêng.
+               2. Lý do: Tổ chức cấu trúc tài liệu mạch lạc, rõ ràng.
+               3. Lưu ý: Thường nên có một thẻ heading (h2-h6) bên trong. -->
+          <h2>Giới thiệu dự án</h2>
+          <p>
+            Đây là trang giới thiệu của website 3D với giao diện đồng bộ, hiện
+            đại và khoa học. Nội dung trong ảnh đã được dẫn vào menu để người
+            dùng nhận ra phong cách thiết kế ngay từ đầu.
+          </p>
+        </section>
+
+        <section class="article">
+          <p>
+            A website (also written as a <a href="#">web site</a>) is one or
+            more <a href="#">web pages</a> and related content that is
+            identified by a common <a href="#">domain name</a> and published on
+            at least one <a href="#">web server</a>. Websites are typically
+            dedicated to a particular topic or purpose, such as
+            <a href="#">news</a>, <a href="#">entertainment</a>, or
+            <a href="#">social media</a>. <a href="#">Hyperlinking</a> between
+            web pages guides the navigation of the site, which often starts with
+            a <a href="#">home page</a>. The most-visited sites are
+            <a href="https://www.google.com">Google</a>,
+            <a href="https://www.youtube.com">YouTube</a>, and
+            <a href="https://www.facebook.com">Facebook</a>.
+          </p>
+          <p>
+            All publicly-accessible websites collectively constitute the
+            <a href="#">World Wide Web</a>. There are also private networks,
+            such as a company’s internal website for its employees. Users can
+            access websites on a range of devices, including
+            <a href="#">desktops</a>, <a href="#">laptops</a>,
+            <a href="#">tablets</a>, and <a href="#">smartphones</a>. The app
+            used on these devices is called a <a href="#">web browser</a>.
+          </p>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <!-- <footer>: フッター(ふったー) (Chân trang)
+             1. Chức năng: Chứa các thông tin cuối trang như bản quyền, liên hệ phụ.
+             2. Lý do: Định hình điểm kết thúc của tài liệu một cách chuẩn mực.
+             3. Lưu ý: Có thể xuất hiện ở cuối tài liệu hoặc cuối một section. -->
+        &copy; 2026 RIKKEI. Thiết kế web chuyên nghiệp và đồng bộ.
+      </footer>
+    </div>
+      <!-- <div>: コンテナ要素(こんてなようそ) (Thẻ chứa/khối)
+           1. Chức năng: Tạo vùng chứa gộp nhóm nút bấm trở lại bảng điều khiển.
+           2. Lý do: Giúp dễ dàng định dạng CSS cho khu vực này.
+           3. Lưu ý: Hạn chế dùng div nếu có thẻ Semantic phù hợp hơn. -->
+      <div style="margin-top: 30px; padding-top: 10px; border-top: 1px solid #ccc;">
+        <a class="back-dashboard" href="../index.html" style="display:inline-block;padding:10px 16px;background:#d32f2f;color:#fff;border-radius:6px;text-decoration:none;font-weight:600;">← Quay lại Dashboard</a>
+      </div>
+  </body>
+</html>

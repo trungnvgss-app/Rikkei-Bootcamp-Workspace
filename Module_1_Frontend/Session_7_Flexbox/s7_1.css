@@ -1,0 +1,14 @@
+.flex-container {
+  display: flex;
+  height: ;100vh; /* Chiều cao của container để dễ dàng căn giữa */
+  justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+.flex-item {
+  width: 100px;
+  height: 100px;
+    background-color: rgb(13, 124, 124);
+    color: white;
+    text-align: center;
+    line-height: 100px; /* Căn giữa văn bản trong ô */
+}

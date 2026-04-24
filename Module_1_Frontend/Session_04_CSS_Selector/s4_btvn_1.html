@@ -1,0 +1,118 @@
+<!doctype html>
+<!-- <html>: ドキュメントルート / Gốc tài liệu, bao toàn bộ trang -->
+<html lang="vi">
+  <head>
+    <!-- <head>: メタデータと外部リソース / Chứa metadata và link CSS -->
+    <meta charset="UTF-8" />
+    <!-- <meta>: 文字エンコード / Thiết lập mã hóa ký tự UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <title>: タイトル / Tiêu đề trang hiển thị ở tab trình duyệt -->
+    <title>Trang chủ 3D</title>
+    <!-- <link>: 外部スタイルシート / Kết nối stylesheet chung -->
+    <link rel="stylesheet" href="./common.css" />
+  </head>
+  <body>
+    <!-- <body>: 本文(ほんぶん) (Phần thân tài liệu)
+         1. Chức năng: Chứa toàn bộ nội dung hiển thị trên trang web.
+         2. Lý do: Đây là vùng không gian chính để trình duyệt render các phần tử UI.
+         3. Lưu ý: Mọi phần tử nhìn thấy được đều phải nằm trong thẻ này. -->
+    <div class="page-shell">
+      <!-- <div>: コンテナ / Khối chứa chính của trang -->
+      <header class="site-header">
+        <!-- <header>: ヘッダー(へっだー) (Phần đầu trang)
+             1. Chức năng: Chứa các thành phần giới thiệu chung và điều hướng (logo, menu).
+             2. Lý do: Giúp người dùng dễ dàng nhận diện thương hiệu và di chuyển trong website.
+             3. Lưu ý: Không nên chứa nội dung chính của bài viết. -->
+        <div class="brand">RIKKEI Lab</div>
+        <!-- <nav>: ナビゲーション / Thanh điều hướng chính của trang -->
+        <nav class="main-nav">
+          <a href="./s4_btvn_1.html" class="active">Trang chủ</a>
+          <a href="./gioi_thieu.html">Giới thiệu</a>
+          <a href="#">Sản phẩm</a>
+          <a href="./s4_form.html">Liên hệ</a>
+        </nav>
+      </header>
+
+      <main class="page-main">
+        <!-- <main>: メイン(めいん) (Nội dung chính)
+             1. Chức năng: Đóng gói vùng nội dung cốt lõi, độc nhất của trang.
+             2. Lý do: Tối ưu SEO và giúp các công cụ đọc màn hình nhận diện được nội dung chính.
+             3. Lưu ý: Mỗi trang chỉ nên có duy nhất một thẻ main. -->
+        <section class="hero">
+          <!-- <section>: セクション(せくしょん) (Phần nội dung)
+               1. Chức năng: Chia trang thành các khu vực nội dung độc lập có chủ đề riêng.
+               2. Lý do: Tổ chức cấu trúc tài liệu mạch lạc, rõ ràng.
+               3. Lưu ý: Thường nên có một thẻ heading (h2-h6) bên trong. -->
+          <div>
+            <span class="eyebrow">Giao diện 3D hiện đại</span>
+            <!-- <span>: インライン要素 / Văn bản nhỏ hiển thị nhãn, không xuống dòng -->
+            <h1>Chào mừng đến với trang web của tôi</h1>
+            <!-- <h1>: 見出し1 / Tiêu đề chính cấp 1, quan trọng nhất -->
+            <p>
+              Đây là phần trình bày bài tập của tôi bằng một giao diện chuyên
+              nghiệp, khoa học và đồng bộ như website thực tế.
+            </p>
+            <!-- <p>: 段落 / Đoạn văn bản giải thích nội dung -->
+            <a class="button" href="#gioi-thieu">Khám phá ngay</a>
+            <!-- <a>: リンク / Liên kết nội bộ hoặc ngoài trang -->
+          </div>
+          <div class="glass-card">
+            <p>
+              Ảnh trong menu giới thiệu mô tả thiết kế giao diện lấy cảm hứng từ
+              thiên nhiên với màu sắc nhẹ nhàng, ánh sáng 3D và cấu trúc rõ
+              ràng.
+            </p>
+            <img
+              src="https://plus.unsplash.com/premium_photo-1682050733502-f58b7f499490?q=80&w=1288&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Ảnh minh họa thiết kế 3D"
+            />
+            <!-- <img>: 画像 / Hiển thị hình ảnh minh họa với thuộc tính alt -->
+          </div>
+        </section>
+
+        <section class="intro-section" id="gioi-thieu">
+          <div class="content-block">
+            <h2>Menu giới thiệu</h2>
+            <!-- <h2>: 見出し2 / Tiêu đề phụ cho phần giới thiệu -->
+            <p>
+              Nội dung hình ảnh tập trung vào phong cách UI 3D: bố cục khoa học,
+              màu nền tự nhiên và hiệu ứng ánh sáng giúp tạo chiều sâu cho trang
+              web.
+            </p>
+            <ul>
+              <!-- <ul>: 箇条書き / Danh sách không thứ tự -->
+              <li>Giao diện hiện đại và dễ nhìn.</li>
+              <li>
+                Ảnh minh họa: lá cây, tông màu nền nhẹ nhàng và điểm nhấn chuyên
+                nghiệp.
+              </li>
+              <li>Thiết kế đồng bộ cho toàn bộ website.</li>
+            </ul>
+            <!-- <li>: リスト項目 / Mỗi mục trong danh sách -->
+          </div>
+          <div class="image-frame">
+            <img
+              src="https://plus.unsplash.com/premium_photo-1682050733502-f58b7f499490?q=80&w=1288&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Ảnh menu giới thiệu"
+            />
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <!-- <footer>: フッター(ふったー) (Chân trang)
+             1. Chức năng: Chứa các thông tin cuối trang như bản quyền, liên hệ phụ.
+             2. Lý do: Định hình điểm kết thúc của tài liệu một cách chuẩn mực.
+             3. Lưu ý: Có thể xuất hiện ở cuối tài liệu hoặc cuối một section. -->
+        &copy; 2026 RIKKEI. Thiết kế giao diện UI khoa học và chuyên nghiệp.
+      </footer>
+    </div>
+      <!-- <div>: コンテナ要素(こんてなようそ) (Thẻ chứa/khối)
+           1. Chức năng: Tạo vùng chứa gộp nhóm nút bấm trở lại bảng điều khiển.
+           2. Lý do: Giúp dễ dàng định dạng CSS cho khu vực này.
+           3. Lưu ý: Hạn chế dùng div nếu có thẻ Semantic phù hợp hơn. -->
+      <div style="margin-top: 30px; padding-top: 10px; border-top: 1px solid #ccc;">
+        <a class="back-dashboard" href="../index.html" style="display:inline-block;padding:10px 16px;background:#d32f2f;color:#fff;border-radius:6px;text-decoration:none;font-weight:600;">← Quay lại Dashboard</a>
+      </div>
+  </body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rikkei</title>       
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .box {
+            width: 600px;
+            height: 600px;
+            background-color: lightgoldenrodyellow;
+            margin: 10px;
+        }
+    </style>
+</head>
+    <!-- <body>: 本文(ほんぶん) (Phần thân tài liệu)
+         1. Chức năng: Chứa toàn bộ nội dung hiển thị trên trang web.
+         2. Lý do: Đây là vùng không gian chính để trình duyệt render các phần tử UI.
+         3. Lưu ý: Mọi phần tử nhìn thấy được đều phải nằm trong thẻ này. -->
+    <body>
+    <!-- <h1><b>Bài học HTML cơ bản với Rikkei</b></h1>     Đây là một comment trong HTML -->
+        <img src="https://rikkei.edu.vn/wp-content/uploads/2025/09/Logo.png" width="150" height="60" alt="Hình ảnh logo Rikkei" />
+        <p><i>Dưới đây là "sơ lược" nội dung trình bày các bài học , kiến thức cơ bản về HTML của tôi!</i></p>
+    <h2> <b>Session1</b>
+     <p>Web basic HTML - Lý Thuyết</p>
+         <h3><i>Lession 1 : </i></h3><p><b>Thiết lập môi trường</b></p>
+        <ol>
+            <li>Tải và cài đặt Visual Studio Code</li>
+            <h4>Extensions </h4>
+            <ul>
+                <li>Live Server:</li>
+                <li>Auto Rename Tag:</li>
+                <li>CAuto Close Tag:</li>
+            </ul>
+            <li>Cài đặt các tiện ích mở rộng cần thiết</li>
+            <li>Hoàn thiện môi trường lập trình</li>
+        </ol>
+         <h3><i>Lession 2 : </i></h3><p><i><b>Sơ lược về Internet</b></i></p>
+             <ol>
+            <li><b>Internet là gì ?</b></li>
+            <p>Internet là một mạng lưới toàn cầu kết nối hàng tỷ thiết bị điện tử lại với nhau. Thay vì là một thực thể đơn lẻ, Internet được mô tả như một “Global Network of Networks” – một mạng khổng lồ được hình thành từ vô số mạng nhỏ liên kết với nhau. Nhờ Internet, các thiết bị có thể trao đổi dữ liệu, chia sẻ thông tin và cung cấp nhiều dịch vụ trực tuyến quen thuộc như email, website, game hay video trực tuyến</p>
+            <li><b>Cách thức hoạt động của Internet</b></li>
+            <ul>
+                <li>Để hiểu Internet, hãy bắt đầu từ một ví dụ nhỏ: trong một ngôi nhà có nhiều máy tính. Nếu muốn các máy tính này trao đổi dữ liệu trực tiếp với nhau, chúng ta cần kết nối từng máy bằng dây cáp vật lý. Tuy nhiên, khi số lượng máy tính tăng lên, số dây kết nối cũng tăng theo cấp số nhân, dẫn đến sự phức tạp khó quản lý</li>
+                <li>Để giải quyết vấn đề đó, bộ định tuyến (router) ra đời. Router hoạt động như một trung tâm kết nối: thay vì mỗi máy tính phải nối dây đến từng máy khác, tất cả chỉ cần kết nối đến router. Router chịu trách nhiệm định tuyến dữ liệu đến đúng thiết bị cần thiết, giúp việc xây dựng và quản lý mạng trở nên đơn giản hơn</li>
+                <li>Mở rộng mô hình này lên quy mô toàn cầu, chúng ta có Internet nơi hàng tỷ thiết bị trên khắp thế giới được kết nối thông qua nhiều lớp router và hạ tầng mạng</li>
+            </ul>
+            <li><b>Các thành phần cơ bản của Internet</b></li>
+            <ul>
+                <li>Địa chỉ IP: Mỗi thiết bị trong mạng đều có một địa chỉ IP riêng biệt để định danh và nhận dạng. Nhờ địa chỉ IP, dữ liệu có thể biết chính xác điểm đến của nó</li>
+                <li>Giao thức TCP/IP: Đây là bộ quy tắc chuẩn giúp các thiết bị trên toàn thế giới có thể giao tiếp với nhau theo cùng một ngôn ngữ. TCP/IP đảm bảo dữ liệu được truyền đi đúng cách và đến đúng nơi</li>
+                <li>Hạ tầng vật lý: Internet hoạt động dựa trên một mạng lưới cáp vật lý trải dài toàn cầu, bao gồm cáp quang ngầm dưới biển và cáp trên mặt đất. Hạ tầng này được triển khai và quản lý bởi các công ty viễn thông và nhà mạng, đóng vai trò xương sống của Internet</li>
+            <!-- ul>li*4 Đây là cách nhân số lương trong lists với cả ul & ol -->
+            </ul>
+            <li><b>Vai trò của Internet trong đời sống</b></li>
+            <ul>
+                <ul>Internet không chỉ là công nghệ kết nối, mà còn là nền tảng hạ tầng cho nhiều hoạt động số hiện đại. Một số ứng dụng phổ biến gồm:</ul>
+                <li>Email: Gửi và nhận thư điện tử tức thì</li>
+                <li> Website: Truy cập thông tin, học tập và làm việc trực tuyến</li>
+                <li>Game online: Kết nối người chơi toàn cầu</li>
+                <li> Streaming video: Xem phim, nghe nhạc và nội dung số theo thời gian thực</li>
+            </ul>
+            <li><b>Kết luận</b></li>
+            <p>Internet là kết quả của việc kết nối hàng tỷ thiết bị trên toàn cầu thông qua router, địa chỉ IP, giao thức TCP/IP và hạ tầng cáp vật lý. Nó là cầu nối thông tin toàn cầu, vừa phức tạp về mặt kỹ thuật vừa quen thuộc trong đời sống hàng ngày. Hiểu được sơ lược về Internet không chỉ giúp chúng ta thấy rõ tầm quan trọng của nó mà còn tạo nền tảng vững chắc để học và phát triển các kỹ năng lập trình web sau này</p>
+             </ol>
+            
+
+         <h3><i>Lession 3 : </i></h3><p>Web là gì ?</p>
+         <h3><i>Lession 4 : </i></h3><p>HTML, Css, JavaScript là gì ?</p>
+         <h3><i>Lession 5 : </i></h3><p>HTML là gì ?</p>
+         <h3><i>Lession 6 : </i></h3><p>HTML boilerplate</p>
+         <h3><i>Lession 7 : </i></h3><p>Heading Elements (Thẻ Heading)</p>
+         <h3><i>Lession 8 : </i></h3><p>Heading Elements (Thẻ Elements)</p>
+         <h3><i>Lession 9 : </i></h3><p>List Elements (Thẻ Danh sách)</p>
+         <h3><i>Lession 10 : </i></h3><p>Image Elements (Thẻ Hình ảnh)</p>
+         <h3><i>Lession 11 : </i></h3><p>Anchor Elements (Thẻ Liên kết)</p>
+         <h3><i>Lession 12 : </i></h3><p>Inline Elements & Block Elements (Thẻ Form)</p>
+         <h3><i>Lession 13 : </i></h3><p>Online Learning Resources</p>
+         <ol>
+            <li>Giới thiệu chung</li>
+            <li>Đặc điểm của thẻ "img"</li>
+            <li>Các thuộc tính quan trọng của thẻ "img"</li>
+            <li>Quản lý hình ảnh trong dự án</li>
+            <li>Tổng kết các đặc điểm chính</li>
+            <li>Lưu ý quan trọng</li>
+            <li>Kết luận</li>
+        </ol>
+    <h2>Session 2</h2>
+        <h3><i>Lession 1</i></h3><p>HTML5 là gì ? Các thẻ của HTML5</p>
+        <h3><i>Lession 2</i></h3><p>Entily trong HTML</p>
+        <h3><i>Lession 3</i></h3><p>Semantics trong HTML</p>
+        <h3><i>Lession 4</i></h3><p>Tổng quan về Table trong HTML</p>
+        <h3><i>Lession 5</i></h3><p>TR, TD, TH Elements</p>
+        <h3><i>Lession 6</i></h3><p></p>
+        <h3><i>Lession 7</i></h3><p></p>
+        <h3><i>Lession 8</i></h3><p></p>
+        <h3><i>Lession 9</i></h3><p></p>
+        <h3><i>Lession 10</i></h3><p></p>
+        <h3><i>Lession 11</i></h3><p></p>
+        <h3><i>Lession 12</i></h3><p></p>
+        <h3><i>Lession 13</i></h3><p></p>
+    <!-- <table>: 表(ひょう) (Bảng dữ liệu)
+         1. Chức năng: Tổ chức dữ liệu dưới dạng hàng và cột.
+         2. Lý do: Phù hợp để trình bày thông tin có cấu trúc như so sánh, lịch trình.
+         3. Lưu ý: Không dùng table để dàn trang layout. -->
+<table border="10">
+   <thead> 
+    <tr>
+        <th rowspan="2">STT</th>
+        <th rowspan="2">Định nghĩa</th>
+        <th rowspan="2">Bối cảnh</th>
+        <th rowspan="2">Các loại tag</th>
+        <th rowspan="2">Ví dụ</th>
+        <th rowspan="2">Lợi ích</th>
+        <th rowspan="2">Ứng dụng</th>
+        <th rowspan="2">Lưu ý</th>
+        <th rowspan="2">Kết luận</th>
+        <th rowspan="2">Ảnh tham khảo</th>
+    </tr>
+    <tr>
+        <th>STT</th>
+        <th rowspan="2">Định nghĩa</th>
+        <th rowspan="2">Bối cảnh</th>
+        <th rowspan="2">Các loại tag</th>
+        <th rowspan="2">Ví dụ</th>
+        <th rowspan="2">Lợi ích</th>
+        <th rowspan="2">Ứng dụng</th>
+        <th rowspan="2">Lưu ý</th>
+        <th rowspan="2">Kết luận</th>
+        <th rowspan="2">Ảnh tham khảo</th>
+    </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+        <th>Lession 1</th>
+        <td>HTML và HTML5 là gì?...</td>
+        <td>HTML5 là phiên bản mới và được mở rộng hơn của HTML. Nó bổ sung nhiều thẻ và tính năng hiện đại, giúp định nghĩa cấu trúc nội dung rõ ràng hơn và hỗ trợ tốt hơn cho các ứng dụng web ngày nay</td>
+        <td>
+            <ul>
+                <li>Thẻ < hr > Đường kẻ ngang</li>
+                <li>Thẻ < br > Xuống dòng</li>
+                <li>Thẻ < sup > Chỉ số trên (Số mũ)</li>
+                <li>Thẻ < sub > Chỉ số dưới (Chỉ số dưới)</li>
+            </ul>
+        </td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>
+            <ul>
+                <li>HTML5 không chỉ ... </li>
+                <li>Nắm vững những ...</li>
+            </ul>
+        </td>
+        <td><img src="./resources/vi_du_sub_tag.png" width="60" height="10" alt=""></td>
+    </tr>
+    <tr>
+        <th>Lession 2</th>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+    </tr>
+    <tr>...</tr>
+    <tr>...</tr>
+    <tr>...</tr>
+    <tr>...</tr>
+    <tr>...</tr>
+    <tr>...</tr>
+    <tr>...</tr>
+    <tr>...</tr>
+    <tr>...</tr>
+    <tr>...</tr>
+</tbody>
+    
+</table>
+
+    </ul>
+       <li><a href="./anchor.html" target="_blank">Click me!</a></li>
+       <li><a href="https://rikkei.edu.vn" target="_blank">Visit Rikkei Education</a></li>
+       <li><a href="">Trang chủ</a></li>
+       <li><a href="">Không có href</a></li>
+    </ul>
+     </h2>
+    <img src="./resources/Logo.png" width="250" height="120" alt="Hình ảnh logo Rikkei">
+    <!-- <div>: コンテナ要素(こんてなようそ) (Thẻ chứa/khối)
+         1. Chức năng: Tạo một vùng chứa (wrapper) để gộp nhóm nút bấm.
+         2. Lý do: Giúp dễ dàng định dạng CSS cho khu vực nút back.
+         3. Lưu ý: Có thể cân nhắc dùng thẻ <nav> hoặc <section> nếu phù hợp ngữ nghĩa hơn. -->
+    <div style="margin-top: 30px; padding-top: 10px; border-top: 1px solid #ccc;">
+      <a class="back-dashboard" href="../../index.html" style="display:inline-block;padding:10px 16px;background:#d32f2f;color:#fff;border-radius:6px;text-decoration:none;font-weight:600;">← Quay lại Dashboard</a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,98 @@
+<!doctype html>
+<!-- <html>: ドキュメントルート / Gốc tài liệu HTML bao toàn bộ trang -->
+<html lang="vi">
+  <head>
+    <!-- <head>: ヘッダー情報 / Chứa metadata, title và stylesheet -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Liên hệ</title>
+    <link rel="stylesheet" href="./common.css" />
+    <link rel="stylesheet" href="./form.css" />
+  </head>
+  <body>
+    <!-- <body>: 本文(ほんぶん) (Phần thân tài liệu)
+         1. Chức năng: Chứa toàn bộ nội dung hiển thị trên trang web.
+         2. Lý do: Đây là vùng không gian chính để trình duyệt render các phần tử UI.
+         3. Lưu ý: Mọi phần tử nhìn thấy được đều phải nằm trong thẻ này. -->
+    <div class="page-shell">
+      <header class="site-header">
+        <!-- <header>: ヘッダー(へっだー) (Phần đầu trang)
+             1. Chức năng: Chứa các thành phần giới thiệu chung và điều hướng (logo, menu).
+             2. Lý do: Giúp người dùng dễ dàng nhận diện thương hiệu và di chuyển trong website.
+             3. Lưu ý: Không nên chứa nội dung chính của bài viết. -->
+        <div class="brand">RIKKEI 3D Studio</div>
+        <nav class="main-nav">
+          <a href="./s4_btvn1.html">Trang chủ</a>
+          <a href="./gioi_thieu.html">Giới thiệu</a>
+          <a href="./san_pham.html">Sản phẩm</a>
+          <a href="./btvn.html">BTVN</a>
+          <a href="./s4_form.html" class="active">Liên hệ</a>
+        </nav>
+      </header>
+
+      <main class="form-page">
+        <!-- <main>: メイン(めいん) (Nội dung chính)
+             1. Chức năng: Đóng gói vùng nội dung cốt lõi, độc nhất của trang.
+             2. Lý do: Tối ưu SEO và giúp các công cụ đọc màn hình nhận diện được nội dung chính.
+             3. Lưu ý: Mỗi trang chỉ nên có duy nhất một thẻ main. -->
+        <section class="content-block">
+          <h1>Liên hệ với chúng tôi</h1>
+          <p>
+            Gửi thông tin để được hỗ trợ thiết kế website 3D hiện đại, giao diện
+            khoa học và chuyên nghiệp.
+          </p>
+        </section>
+
+        <section class="contact-card form-card">
+          <!-- <form>: フォーム要素(ふぉーむようそ) (Biểu mẫu)
+               1. Chức năng: Tạo một khu vực chứa các trường nhập liệu tương tác.
+               2. Lý do: Thu thập thông tin tài khoản hoặc phản hồi từ người dùng.
+               3. Lưu ý: Cần chỉ định thuộc tính action và method để gửi dữ liệu. -->
+          <form action="#" method="POST">
+            <div>
+              <label for="fullname">Họ và tên:</label>
+              <!-- <label>: ラベル / Nhãn liên kết với input bằng for/id -->
+              <input type="text" id="fullname" name="fullname" required />
+              <!-- <input>: インプット / Ô nhập văn bản, bắt buộc -->
+            </div>
+
+            <div>
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+
+            <div>
+              <label for="message">Tin nhắn:</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+              ></textarea>
+              <!-- <textarea>: テキストエリア / Vùng nhập nhiều dòng -->
+            </div>
+
+            <button type="submit" class="submit-btn">Gửi</button>
+            <!-- <button>: ボタン / Nút gửi biểu mẫu -->
+          </form>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <!-- <footer>: フッター(ふったー) (Chân trang)
+             1. Chức năng: Chứa các thông tin cuối trang như bản quyền, liên hệ phụ.
+             2. Lý do: Định hình điểm kết thúc của tài liệu một cách chuẩn mực.
+             3. Lưu ý: Có thể xuất hiện ở cuối tài liệu hoặc cuối một section. -->
+        <a href="./s4_btvn1.html">Quay lại trang chủ</a> • &copy; 2026 RIKKEI.
+        Bảo lưu mọi quyền.
+      </footer>
+    </div>
+      <!-- <div>: コンテナ要素(こんてなようそ) (Thẻ chứa/khối)
+           1. Chức năng: Tạo vùng chứa gộp nhóm nút bấm trở lại bảng điều khiển.
+           2. Lý do: Giúp dễ dàng định dạng CSS cho khu vực này.
+           3. Lưu ý: Hạn chế dùng div nếu có thẻ Semantic phù hợp hơn. -->
+      <div style="margin-top: 30px; padding-top: 10px; border-top: 1px solid #ccc;">
+        <a class="back-dashboard" href="../index.html" style="display:inline-block;padding:10px 16px;background:#d32f2f;color:#fff;border-radius:6px;text-decoration:none;font-weight:600;">← Quay lại Dashboard</a>
+      </div>
+  </body>
+</html>

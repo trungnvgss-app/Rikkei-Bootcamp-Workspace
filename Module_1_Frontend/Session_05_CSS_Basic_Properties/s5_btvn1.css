@@ -1,0 +1,22 @@
+/* button: ボタン(ぼたん) (Nút bấm)
+   1. Chức năng: Định dạng 4 viền của nút với 4 kiểu (style) và màu sắc khác nhau.
+   2. Lý do: Đây là bài tập thực hành CSS border để hiểu rõ các thuộc tính viền.
+   3. Lưu ý: Sử dụng border-left, border-top, border-right, border-bottom. */
+button {
+  border-left: 5px groove purple;
+  border-top: 2px solid red;
+  border-right: 3px dotted blue;
+  border-bottom: 5px double green;
+}
+
+/* body: 本文(ほんぶん) (Thân trang web)
+   1. Chức năng: Đặt bố cục trang để căn giữa nút bấm vào giữa màn hình.
+   2. Lý do: Giúp bài tập hiển thị rõ ràng, tập trung vào đối tượng chính.
+   3. Lưu ý: Sử dụng display: flex. */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}

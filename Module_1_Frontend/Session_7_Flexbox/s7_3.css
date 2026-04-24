@@ -1,0 +1,49 @@
+/* Xóa margin mặc định của trình duyệt để nhìn gọn hơn */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 50px; /* Đẩy layout ra giữa màn hình một chút để dễ nhìn */
+  font-family: Arial, sans-serif;
+}
+
+/* =========================================
+   CẤU HÌNH THẺ CHA (TẠO LƯỚI GRID)
+========================================= */
+.container {
+  display: grid; /* Bật chế độ CSS Grid cho thẻ cha */
+
+  /* CHIA CỘT: repeat(4, 1fr) nghĩa là tạo ra 4 cột.
+       Mỗi cột chiếm 1 phần (1 fraction) không gian bằng nhau. */
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 10px; /* Tạo khoảng cách 10px giữa các hàng và các cột */
+
+  padding: 10px; /* Khoảng cách từ viền container vào đến các khối xanh */
+  border: 2px solid #ccc; /* Viền ngoài cùng màu xám giống trong ảnh */
+  background-color: #f9f9f9; /* Màu nền xám nhạt cho toàn bộ khung */
+}
+
+/* =========================================
+   CẤU HÌNH THẺ CON (CÁC KHỐI MÀU XANH)
+========================================= */
+.box {
+  background-color: #2ecc71; /* Đổ màu nền xanh lá */
+  color: white; /* Chữ màu trắng */
+  font-weight: bold;
+  height: 80px; /* Chiều cao cố định của mỗi khối */
+  border-radius: 4px; /* Bo góc nhẹ 4px giống trong ảnh */
+
+  /* Dùng Flexbox ở đây chỉ để căn giữa chữ số (1, 2, 3...) */
+  display: flex;
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+.box.large {
+  grid-column: span 2; /* Chiếm 2 cột */
+  grid-row: span 2; /* Chiếm 2 hàng */
+}

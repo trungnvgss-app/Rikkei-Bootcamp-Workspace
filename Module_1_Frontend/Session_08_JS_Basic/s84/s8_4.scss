@@ -1,0 +1,113 @@
+// ===============================
+// 1. KHAI BÁO BIẾN (VARIABLES)
+// ===============================
+$header-bg: #333333; // Màu xám đen cho Header
+$text-light: #ffffff; // Màu chữ trắng
+$bg-light: #f5f5f5; // Màu nền xám nhạt cho phần Giới thiệu
+$hero-bg: #cccccc; // Màu xám cho ảnh placeholder
+
+// ===============================
+// 2. CSS RESET CƠ BẢN
+// ===============================
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  color: #333;
+}
+
+// ===============================
+// 3. HEADER & NAVIGATION
+// ===============================
+.header {
+  background-color: $header-bg;
+  color: $text-light;
+  display: flex; // Dùng Flexbox để dàn hàng ngang
+  justify-content: space-between; // Đẩy Logo sang trái, Menu sang phải
+  align-items: center; // Căn giữa theo chiều dọc
+  padding: 15px 30px; // Khoảng cách bên trong Header
+
+  .logo {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 20px; // Khoảng cách giữa các link
+
+    a {
+      color: $text-light;
+      text-decoration: none;
+      font-size: 16px;
+
+      &:hover {
+        text-decoration: underline; // Hiệu ứng gạch chân khi di chuột
+      }
+    }
+  }
+}
+
+// ===============================
+// 4. HERO SECTION (Ảnh bìa)
+// ===============================
+.hero-section {
+  padding: 20px; // Lùi vào một chút so với lề
+  max-width: 1200px;
+  margin: 0 auto; // Căn giữa toàn bộ khối
+
+  .hero-placeholder {
+    background-color: $hero-bg;
+    color: #888;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    height: 200px; // Chiều cao mặc định trên mobile
+    border-radius: 4px;
+
+    // Khi màn hình từ Tablet (768px) trở lên, cho ảnh cao thêm
+    @media (min-width: 768px) {
+      height: 400px;
+      font-size: 3rem;
+    }
+  }
+}
+
+// ===============================
+// 5. FEATURES SECTION (Giới thiệu)
+// ===============================
+.features-section {
+  display: grid;
+  gap: 15px; // Khoảng cách giữa các khối
+  padding: 0 20px 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  // 1. MOBILE-FIRST: Mặc định hiển thị 1 cột xếp dọc
+  grid-template-columns: 1fr;
+
+  .feature-item {
+    background-color: $bg-light;
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+
+  // 2. DESKTOP/TABLET: Khi màn hình lớn hơn 768px
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr); // Chia làm 2 cột
+
+    // Kỹ thuật giúp "Giới Thiệu 3" chiếm toàn bộ bề ngang (2 cột)
+    .item-full {
+      grid-column: span 2;
+    }
+  }
+}

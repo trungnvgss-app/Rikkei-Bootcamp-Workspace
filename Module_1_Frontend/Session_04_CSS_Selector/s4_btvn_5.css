@@ -1,0 +1,7 @@
+/* .external-text: 外部テキスト(がいぶてきすと) (Văn bản bên ngoài)
+   1. Chức năng: Đổi màu chữ của phần tử thành màu tím (#8e44ad).
+   2. Lý do: Sử dụng CSS external (file riêng) để định dạng, chứng minh cách tách biệt CSS và HTML.
+   3. Lưu ý: Cần link file này vào file HTML qua thẻ <link>. */
+.external-text {
+  color: #8e44ad;
+}

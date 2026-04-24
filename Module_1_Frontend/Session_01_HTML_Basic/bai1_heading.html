@@ -5,10 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bài 1 - Heading</title>
   </head>
+  <!-- <body>: 本文(ほんぶん) (Phần thân tài liệu)
+       1. Chức năng: Chứa toàn bộ nội dung hiển thị trên trang web.
+       2. Lý do: Đây là vùng không gian chính để trình duyệt render các phần tử UI.
+       3. Lưu ý: Mọi phần tử nhìn thấy được đều phải nằm trong thẻ này. -->
   <body>
+    <!-- <h1>: 見出し要素(みだしようそ) (Thẻ tiêu đề cấp 1)
+         1. Chức năng: Hiển thị tiêu đề chính lớn nhất của trang web.
+         2. Lý do: Nhấn mạnh nội dung cốt lõi của bài tập HTML.
+         3. Lưu ý: Mỗi trang chỉ nên có duy nhất một thẻ h1 để tối ưu SEO. -->
     <h1>Chào mừng đến với bài tập HTML</h1>
     <h2>Đây là thẻ tiêu đề cấp 2</h2>
     <h3>Đây là thẻ tiêu đề cấp 3</h3>
     <p>Đây là một đoạn văn bản mẫu trong bài tập sử dụng thẻ heading.</p>
+      
+    <!-- <div>: コンテナ要素(こんてなようそ) (Thẻ chứa/khối)
+         1. Chức năng: Tạo một vùng chứa (wrapper) để gộp nhóm nút bấm.
+         2. Lý do: Giúp dễ dàng định dạng CSS (margin, padding, border) cho khu vực nút back.
+         3. Lưu ý: Có thể cân nhắc dùng thẻ <nav> hoặc <section> nếu phù hợp ngữ nghĩa hơn. -->
+    <div style="margin-top: 30px; padding-top: 10px; border-top: 1px solid #ccc;">
+      <a class="back-dashboard" href="../index.html" style="display:inline-block;padding:10px 16px;background:#d32f2f;color:#fff;border-radius:6px;text-decoration:none;font-weight:600;">← Quay lại Dashboard</a>
+    </div>
   </body>
 </html>

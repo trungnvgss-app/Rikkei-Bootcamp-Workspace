@@ -1,0 +1,27 @@
+/* .item-list: アイテムリスト(あいてむりすと) (Danh sách mục)
+   1. Chức năng: Xóa dấu chấm đầu dòng mặc định và giới hạn chiều rộng của danh sách.
+   2. Lý do: Biến danh sách `<ul>` thông thường thành cấu trúc layout tùy chỉnh.
+   3. Lưu ý: Thuộc tính list-style: none để xóa dấu chấm. */
+.item-list {
+  list-style: none;
+  max-width: 1000px;
+  padding: 0px;
+}
+
+/* .item: 項目(こうもく) (Mục nội dung)
+   1. Chức năng: Định dạng mỗi thẻ `<li>` thành một khối xám với viền bo tròn.
+   2. Lý do: Tạo ra các dòng hiển thị giống như một bảng hoặc menu tương tác.
+   3. Lưu ý: Thêm hiệu ứng transition để mượt mà khi hover. */
+.item {
+  background-color: #b5b5b5;
+  margin-bottom: 8px;
+  padding: 15px 70px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.item:hover {
+  background-color: #525252;
+  color: #ffffff;
+}

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài tập CSS: Inline / Internal / External</title>
+    <link rel="stylesheet" href="s4_btvn_5.css" />
+    <style>
+      /* Internal style */
+      .intro-text {
+        color: #1d4ed8;
+        font-size: 18px;
+        line-height: 1.5;
+        margin-top: 0;
+      }
+      .highlight-text {
+        color: #d32f2f;
+        font-size: 16px;
+        line-height: 1.6;
+        margin: 12px 0 0;
+      }
+      .tip-box {
+        margin: 16px 0 24px;
+        padding: 14px 16px;
+        background-color: #fdf6e3;
+        border-left: 5px solid #f6c23e;
+        color: #4f4f4f;
+      }
+      .internal-title {
+        color: #d35400;
+      }
+      .internal-paragraph {
+        color: #2980b9;
+      }
+    </style>
+  </head>
+  <!-- <body>: 本文(ほんぶん) (Phần thân tài liệu)
+       1. Chức năng: Chứa toàn bộ nội dung hiển thị trên trang web.
+       2. Lý do: Đây là vùng không gian chính để trình duyệt render các phần tử UI.
+       3. Lưu ý: Mọi phần tử nhìn thấy được đều phải nằm trong thẻ này. -->
+  <body>
+    <h1 style="color: #f39c12">What is CSS?</h1>
+    <p class="intro-text">
+      Cascading Style Sheets (CSS) is used to format the layout of a webpage.
+    </p>
+    <p class="highlight-text">
+      With CSS, you can control the color, font, the size of text, the spacing
+      between elements, how elements are positioned and laid out, what
+      background images or background colors are to be used, different displays
+      for different devices and screen sizes, and much more!
+    </p>
+    <!-- <div>: コンテナ要素(こんてなようそ) (Thẻ chứa/khối)
+         1. Chức năng: Tạo một vùng chứa (wrapper) để gộp nhóm các phần tử.
+         2. Lý do: Giúp dễ dàng định dạng CSS cho khối tip-box.
+         3. Lưu ý: Dùng div khi không có thẻ Semantic nào phù hợp hơn. -->
+    <div class="tip-box">
+      Tip: The word cascading means that a style applied to a parent element
+      will also apply to all children elements within the parent. So, if you set
+      the color of the body text to "blue," all headings, paragraphs, and other
+      text elements within the body will also get the same color (unless you
+      specify something else)!
+    </div>
+
+    <!-- <section>: セクション(せくしょん) (Phần nội dung)
+         1. Chức năng: Chia trang thành các khu vực nội dung độc lập có chủ đề riêng.
+         2. Lý do: Tổ chức cấu trúc tài liệu mạch lạc, phân chia các ví dụ CSS rõ ràng.
+         3. Lưu ý: Thường nên có một thẻ heading (h2-h6) bên trong. -->
+    <section>
+      <h2>Phần 1: Inline style</h2>
+      <p style="color: #c0392b">
+        Đây là đoạn văn đổi màu bằng inline-style trực tiếp trên thẻ HTML.
+      </p>
+    </section>
+
+    <!-- <section>: セクション(せくしょん) (Phần nội dung)
+         1. Chức năng: Chia trang thành các khu vực nội dung độc lập có chủ đề riêng.
+         2. Lý do: Tổ chức cấu trúc tài liệu mạch lạc, phân chia các ví dụ CSS rõ ràng.
+         3. Lưu ý: Thường nên có một thẻ heading (h2-h6) bên trong. -->
+    <section>
+      <h2>Phần 2: Internal style</h2>
+      <h3 class="internal-title">Tiêu đề này dùng internal-style</h3>
+      <p class="internal-paragraph">
+        Đoạn văn này đổi màu bằng internal-style trong thẻ &lt;style&gt; ở phần
+        &lt;head&gt;.
+      </p>
+    </section>
+
+    <!-- <section>: セクション(せくしょん) (Phần nội dung)
+         1. Chức năng: Chia trang thành các khu vực nội dung độc lập có chủ đề riêng.
+         2. Lý do: Tổ chức cấu trúc tài liệu mạch lạc, phân chia các ví dụ CSS rõ ràng.
+         3. Lưu ý: Thường nên có một thẻ heading (h2-h6) bên trong. -->
+    <section>
+      <h2>Phần 3: External style</h2>
+      <p class="external-text">
+        Đoạn văn này đổi màu bằng external-style từ file CSS liên kết.
+      </p>
+    </section>
+      <div style="margin-top: 30px; padding-top: 10px; border-top: 1px solid #ccc;">
+      <a class="back-dashboard" href="../index.html" style="display:inline-block;padding:10px 16px;background:#d32f2f;color:#fff;border-radius:6px;text-decoration:none;font-weight:600;">← Quay lại Dashboard</a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,80 @@
+/* --- Form cụ thể cho trang Liên hệ --- */
+/* .contact-card: 連絡先カード(れんらくさきかーど) (Thẻ liên hệ)
+   1. Chức năng: Tạo khung bao quanh form liên hệ với thiết kế dạng thẻ (card).
+   2. Lý do: Giúp tách biệt form với các phần khác của trang web, tăng điểm nhấn thị giác.
+   3. Lưu ý: Class này nên được áp dụng cho thẻ div bọc ngoài cùng của form. */
+.contact-card {
+  max-width: 640px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.96);
+  padding: 30px;
+  border-radius: 28px;
+  border: 1px solid rgba(59, 130, 246, 0.16);
+  box-shadow: 0 28px 90px rgba(15, 23, 42, 0.08);
+}
+
+.contact-card h2 {
+  margin-bottom: 20px;
+  font-size: 1.9rem;
+  color: #0f172a;
+}
+
+form div {
+  margin-bottom: 18px;
+}
+
+label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #334155;
+  font-size: 0.95rem;
+}
+
+/* input, textarea: 入力要素(にゅうりょくようそ) (Trường nhập liệu)
+   1. Chức năng: Định dạng kích thước, đường viền, màu nền cho các ô nhập văn bản.
+   2. Lý do: Mang lại trải nghiệm gõ văn bản tốt hơn, thiết kế đồng nhất và responsive (width: 100%).
+   3. Lưu ý: Thuộc tính resize: vertical chỉ áp dụng thực tế cho textarea. */
+input,
+textarea {
+  width: 100%;
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: #f8fbff;
+  color: #0f172a;
+  font-family: inherit;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+input:focus,
+textarea:focus {
+  border-color: rgba(59, 130, 246, 0.6);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12);
+  outline: none;
+}
+
+/* .submit-btn: 送信ボタン(そうしんぼたん) (Nút gửi form)
+   1. Chức năng: Định dạng kiểu dáng cho nút gửi (submit) của biểu mẫu.
+   2. Lý do: Thu hút sự chú ý của người dùng để thực hiện hành động chính.
+   3. Lưu ý: Sử dụng hiệu ứng gradient để tạo cảm giác hiện đại. */
+.submit-btn {
+  width: 100%;
+  padding: 16px;
+  border-radius: 18px;
+  border: none;
+  background: linear-gradient(135deg, #14b8a6, #3b82f6);
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(59, 130, 246, 0.24);
+}

@@ -1,0 +1,61 @@
+/* body: 本文(ほんぶん) (Thân trang web)
+   1. Chức năng: Đặt nền tảng màu sắc và căn giữa nội dung cho toàn bộ trang.
+   2. Lý do: Giúp bài tập hiển thị ở giữa màn hình một cách đẹp mắt.
+   3. Lưu ý: Dùng flexbox với min-height 100vh để căn giữa theo cả 2 trục. */
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff8dd;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* .quote-card: 引用カード(いんようかーど) (Thẻ trích dẫn)
+   1. Chức năng: Tạo khối hộp chứa nội dung câu nói với viền và đổ bóng.
+   2. Lý do: Làm nổi bật câu trích dẫn, tách biệt khỏi nền trang.
+   3. Lưu ý: Sử dụng padding lớn để nội dung bên trong có không gian "thở". */
+.quote-card {
+  background-color: #fff8d5;
+  border: 1px solid #f0e2a0;
+  border-radius: 18px;
+  padding: 32px 28px;
+  max-width: 440px;
+  text-align: center;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.09);
+}
+
+.quote-card h1 {
+  margin: 0 0 18px;
+  color: #16276d;
+  font-size: 2rem;
+}
+
+.quote-card blockquote {
+  margin: 0 0 26px;
+  color: #1e3a8a;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+/* .btn-readmore: 続きを読むボタン(つづきをよむぼたん) (Nút xem thêm)
+   1. Chức năng: Định dạng liên kết (thẻ a) thành dạng nút bấm trực quan.
+   2. Lý do: Giúp Call-To-Action (CTA) dễ nhận biết và dễ click hơn.
+   3. Lưu ý: Cần hiệu ứng :hover để thay đổi màu khi di chuột vào. */
+.btn-readmore {
+  display: inline-block;
+  padding: 12px 26px;
+  border-radius: 8px;
+  background-color: #27a844;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-readmore:hover,
+.btn-readmore:focus {
+  background-color: #15832b;
+  color: #ffffff;
+}

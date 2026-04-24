@@ -1,0 +1,29 @@
+﻿<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Button Click Color Change</title>
+    <link rel="stylesheet" href="s5_btvn3.css" />
+  </head>
+  <body>
+    <!-- <main>: メイン(めいん) (Nội dung chính của trang) -->
+    <main>
+      <!-- <button>: ボタン(ぼたん) (Nút bấm Click me) -->
+      <button id="colorButton" type="button">Click me</button>
+    </main>
+
+    <script>
+      const button = document.getElementById("colorButton");
+      button.addEventListener("click", () => {
+        button.classList.add("clicked");
+        setTimeout(() => {
+          button.classList.remove("clicked");
+        }, 1000);
+      });
+    </script>
+      <div style="margin-top: 30px; padding-top: 10px; border-top: 1px solid #ccc;">
+      <a class="back-dashboard" href="../index.html" style="display:inline-block;padding:10px 16px;background:#d32f2f;color:#fff;border-radius:6px;text-decoration:none;font-weight:600;">← Quay lại Dashboard</a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Confirm your Book - TripGuide</title>
+    <link rel="stylesheet" href="./s8_5.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header-inner">
+        <img src="./resource/logo.png" alt="TripGuide Logo" class="logo" />
+        <div class="user-actions">
+          <span class="currency">USD 🇺🇸</span>
+          <span class="notification">🔔</span>
+          <div class="avatar">
+            <img
+              src="./resource/user.png"
+              alt="User Avatar"
+              class="avatar-img"
+            />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="breadcrumb container">
+      Home > Hotel list > Hotel details >
+      <span class="active">Confirm and pay</span>
+    </div>
+
+    <main class="checkout-container container">
+      <h1 class="page-title">Confirm your Book</h1>
+
+      <section class="tour-section">
+        <h2>Your tour</h2>
+        <div class="info-card">
+          <div class="info-text">
+            <span class="label">Date</span>
+            <span class="value">June 27 - 30, 2020</span>
+          </div>
+          <span class="edit-icon">✏️</span>
+        </div>
+        <div class="info-card">
+          <div class="info-text">
+            <span class="label">Traveller</span>
+            <span class="value">1 Passenger</span>
+          </div>
+          <span class="edit-icon">✏️</span>
+        </div>
+      </section>
+
+      <aside class="summary-section">
+        <div class="summary-card">
+          <h3>Switzerland Hotels and Places to Stay</h3>
+          <div class="rating">
+            ⭐ 4.8 <span class="reviews">(122 reviews)</span>
+          </div>
+
+          <img
+            src="./resource/daniel-corneschi-N6HTCyN50p0-unsplash 1.png"
+            alt="Hotel Room"
+            class="hotel-img"
+          />
+
+          <p class="room-type">1 bedroom + 1 private room</p>
+
+          <div class="check-dates">
+            <div>
+              <span class="label">Check in</span>
+              <span class="value">June 27, 2020</span>
+            </div>
+            <div>
+              <span class="label">Check out</span>
+              <span class="value">June 30, 2020</span>
+            </div>
+          </div>
+
+          <div class="guests-info">
+            <span class="label">Guest</span>
+            <span class="value">2 guests</span>
+          </div>
+
+          <h4 class="booked-title">Booked details</h4>
+
+          <div class="price-row">
+            <span>$119 + 5nights</span>
+            <strong>$833</strong>
+          </div>
+          <div class="price-row">
+            <span>Ocupancy text and fee</span>
+            <strong>-$125</strong>
+          </div>
+          <div class="price-row">
+            <span>Service free</span>
+            <strong>$103</strong>
+          </div>
+          <div class="price-row total-row">
+            <span>Total</span>
+            <strong>$833</strong>
+          </div>
+
+          <a href="#" class="report-link">Report this property</a>
+        </div>
+      </aside>
+
+      <section class="payment-section">
+        <h2>Credit Cards</h2>
+
+        <div class="payment-methods">
+          <img src="./resource/mayment_card.png" alt="Payment Methods" />
+        </div>
+
+        <div class="saved-cards">
+          <img src="./resource/card_1.png" alt="Mastercard" class="card-img" />
+          <img src="./resource/card_2.png" alt="Visa" class="card-img" />
+        </div>
+
+        <form class="payment-form">
+          <div class="form-group full-width">
+            <label>Card Number</label>
+            <div class="input-wrapper verified">
+              <input type="text" value="5884 6241 4444 3333" />
+              <span class="check-mark">✓</span>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group half-width">
+              <label>Expiry Date</label>
+              <input type="text" placeholder="MM / YY" />
+            </div>
+            <div class="form-group half-width">
+              <label>CVC/CVV</label>
+              <input type="password" placeholder="****" />
+            </div>
+          </div>
+          <div class="checkbox-group">
+            <input type="checkbox" id="save-card" checked />
+            <label for="save-card">Save Card</label>
+          </div>
+          <button type="button" class="btn-primary">Confirm and reserve</button>
+        </form>
+      </section>
+    </main>
+
+    <section class="newsletter-section container">
+      <div
+        class="newsletter-box"
+        style="background-image: url(&quot;bg.png&quot;)"
+      >
+        <div class="newsletter-content">
+          <h2>Get our pro offers</h2>
+          <p>Create a visual identity for your company, and an overall brand</p>
+        </div>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Enter email ..." />
+          <button type="button">Subscribe</button>
+        </form>
+      </div>
+    </section>
+
+    <footer class="site-footer container">
+      <div class="footer-col brand-col">
+        <img src="./resource/logo.png" alt="TripGuide Logo" />
+        <p>
+          This is the team that specializes in making sure in the find it a your
+          interior looks cool
+        </p>
+        <div class="theme-toggle">
+            <span class="toggle-icon">🌞</span>
+            <span class="toggle-icon">🌜</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#">Travel Booking</a></li>
+          <li><a href="#">Flight Booking</a></li>
+          <li><a href="#">Car Booking</a></li>
+          <li><a href="#">Fivestar Hotel</a></li>
+          <li><a href="#">Traveling</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Account</a></li>
+          <li><a href="#">Legal</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Terms & Condition</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Business</h4>
+        <ul>
+          <li><a href="#">Success</a></li>
+          <li><a href="#">About Locato</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Information</a></li>
+          <li><a href="#">Travel Guide</a></li>
+        </ul>
+      </div>
+    </footer>
+      <div style="margin-top: 30px; padding-top: 10px; border-top: 1px solid #ccc;">
+      <a class="back-dashboard" href="../../index.html" style="display:inline-block;padding:10px 16px;background:#d32f2f;color:#fff;border-radius:6px;text-decoration:none;font-weight:600;">← Quay lại Dashboard</a>
+    </div>
+  </body>
+</html>
