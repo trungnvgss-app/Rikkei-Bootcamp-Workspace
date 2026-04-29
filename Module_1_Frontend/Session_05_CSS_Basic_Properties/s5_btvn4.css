@@ -1,4 +1,8 @@
-﻿body {
+/* body: ボディ(ぼでぃ) (Thân trang web)
+   1. Chức năng: Căn giữa các khối xoay vào tâm màn hình.
+   2. Lý do: Tạo bố cục tập trung cho bài tập thực hành animation.
+   3. Lưu ý: Sử dụng flexbox toàn trang. */
+body {
   margin: 0;
   min-height: 100vh;
   display: flex;
@@ -8,12 +12,20 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* main: メイン(めいん) (Vùng nội dung chính)
+   1. Chức năng: Đảm bảo vùng chứa chiếm toàn bộ chiều ngang để căn giữa nội dung.
+   2. Lý do: Tạo không gian linh hoạt cho các khối con.
+   3. Lưu ý: Sử dụng display: flex. */
 main {
   width: 100%;
   display: flex;
   justify-content: center;
 }
 
+/* .box-container: ボックスコンテナ(ぼっくすこんてな) (Khung chứa các khối)
+   1. Chức năng: Sắp xếp các khối div nằm cạnh nhau với khoảng cách xác định.
+   2. Lý do: Quản lý vị trí các khối xoay một cách khoa học.
+   3. Lưu ý: Sử dụng gap: 30px để tạo khoảng cách giữa các khối. */
 .box-container {
   display: flex;
   gap: 30px;
@@ -21,6 +33,10 @@ main {
   justify-content: center;
 }
 
+/* .box: ボックス(ぼっくす) (Khối hình vuông cơ bản)
+   1. Chức năng: Định dạng kích thước, màu sắc và kiểu chữ cho các khối xoay.
+   2. Lý do: Tạo ra các đối tượng trực quan để áp dụng animation.
+   3. Lưu ý: Bo góc border-radius: 12px để giao diện mềm mại hơn. */
 .box {
   width: 180px;
   height: 180px;
@@ -36,14 +52,23 @@ main {
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
+/* .box:hover: ボックスホバー(ぼっくすほばー) (Hiệu ứng khi di chuột) */
 .box:hover {
   background-color: #158315;
 }
 
+/* .rotate-four:hover: 4回転(よんかいてん) (Xoay 4 vòng khi di chuột)
+   1. Chức năng: Kích hoạt animation xoay 4 vòng (1440 độ).
+   2. Lý do: Thực hành cách giới hạn số vòng xoay thông qua keyframes.
+   3. Lưu ý: Animation diễn ra trong 0.8s. */
 .rotate-four:hover {
   animation: rotate4 0.8s ease-in-out;
 }
 
+/* .rotate-forever:hover: 無限回転(むげんかいてん) (Xoay vô tận khi di chuột)
+   1. Chức năng: Kích hoạt animation xoay liên tục không dừng.
+   2. Lý do: Thực hành cách sử dụng giá trị infinite trong animation-iteration-count.
+   3. Lưu ý: Tốc độ xoay đều (linear). */
 .rotate-forever:hover {
   animation: rotateForever 1s linear infinite;
 }

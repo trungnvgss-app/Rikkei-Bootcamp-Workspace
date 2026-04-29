@@ -1,0 +1,116 @@
+/* Reset cơ bản */
+/* * (Universal selector): 全体選択子(ぜんたいせんたくし) (Chọn toàn bộ các phần tử)
+   1. Chức năng: Reset margin, padding và đặt box-sizing cho toàn bộ website.
+   2. Lý do: Giúp giao diện hiển thị nhất quán trên tất cả các trình duyệt.
+   3. Lưu ý: Sử dụng font Arial làm mặc định. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* body: ボディ(ぼでぃ) (Thân trang web)
+   1. Chức năng: Đặt hiển thị flexbox để đẩy footer xuống đáy trang.
+   2. Lý do: Tạo ra một cấu trúc trang web chuẩn với layout linh hoạt.
+   3. Lưu ý: min-height: 100vh để đảm bảo body phủ kín màn hình. */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+/* Header */
+/* header: ヘッダー(へっだー) (Phần đầu trang)
+   1. Chức năng: Đặt màu nền xanh, căn giữa văn bản và tạo khoảng đệm.
+   2. Lý do: Làm nổi bật phần thương hiệu và điều hướng của trang web.
+   3. Lưu ý: Sử dụng màu xanh #007bff đặc trưng. */
+header {
+  background-color: #007bff; /* Màu xanh giống trong ảnh */
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+/* Thân trang */
+/* .container: コンテナ(こんてな) (Khung chứa nội dung chính)
+   1. Chức năng: Căn giữa khối profile theo chiều ngang và dọc.
+   2. Lý do: Đảm bảo nội dung trung tâm luôn được hiển thị nổi bật.
+   3. Lưu ý: Sử dụng flex: 1 để tự động chiếm không gian còn trống. */
+.container {
+  flex: 1; /* Đẩy footer xuống đáy trang */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+}
+
+.profile-section {
+  display: flex;
+  align-items: center;
+  max-width: 800px;
+  gap: 30px;
+}
+
+.avatar {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 5px solid #4caf50; /* Viền xanh lá giống ảnh */
+  object-fit: cover;
+}
+
+.bio-text {
+  font-size: 20px;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Footer */
+/* footer: フッター(ふったー) (Phần chân trang)
+   1. Chức năng: Định dạng khu vực chân trang với nền xám nhạt và căn giữa văn bản.
+   2. Lý do: Phân tách rõ ràng phần kết thúc của trang web.
+   3. Lưu ý: Có viền border-top để phân cách với nội dung phía trên. */
+footer {
+  background-color: #f1f1f1;
+  text-align: center;
+  padding: 20px;
+  color: #555;
+  font-size: 14px;
+  border-top: 1px solid #ddd;
+}
+
+footer a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive cho điện thoại */
+@media (max-width: 600px) {
+  .profile-section {
+    flex-direction: column;
+    text-align: center;
+  }
+}

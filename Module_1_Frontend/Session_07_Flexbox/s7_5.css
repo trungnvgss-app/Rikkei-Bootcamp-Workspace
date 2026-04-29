@@ -1,0 +1,68 @@
+/* CSS Reset */
+/* * (Universal selector): 全体選択子(ぜんたいせんたいし) (Chọn toàn bộ các phần tử)
+   1. Chức năng: Reset margin và padding mặc định của trình duyệt.
+   2. Lý do: Giúp layout Grid không bị lệch do khoảng cách thừa không mong muốn.
+   3. Lưu ý: Sử dụng box-sizing: border-box. */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* body: ボディ(ぼでぃ) (Thân trang web)
+   1. Chức năng: Đặt màu nền xám nhạt và tạo khoảng đệm cho trang.
+   2. Lý do: Giúp giao diện trông chuyên nghiệp và dễ quan sát.
+   3. Lưu ý: Sử dụng background-color: #f0f0f0. */
+body {
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+/**
+ * Cấu hình cho container chính sử dụng CSS Grid
+ *
+ * @description: Cấu hình grid container chính để chứa các box con
+ */
+/* .grid-container: グリッドコンテナ(ぐりっどこんてな) (Khung chứa Grid nâng cao)
+   1. Chức năng: Thiết lập lưới 4 cột với chiều cao hàng tự động 80px.
+   2. Lý do: Thực hành bài tập chia lưới nâng cao với các khối có kích thước khác nhau.
+   3. Lưu ý: Sử dụng grid-template-columns: repeat(4, 1fr). */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 80px;
+  gap: 10px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+/**
+ * Cấu hình cho các box con trong grid
+ *
+ * @description: Cấu hình box con để chứa nội dung
+ */
+/* .box: ボックス(ぼっくす) (Khối con cơ bản)
+   1. Chức năng: Định dạng màu nền tối và căn giữa văn bản.
+   2. Lý do: Tạo sự đồng nhất cho các phần tử trong lưới.
+   3. Lưu ý: Sử dụng Flexbox bên trong để căn giữa nội dung. */
+.box {
+  background-color: #2b3e50;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/**
+ * Cấu hình cho các box lớn trong grid
+ *
+ * @description: Cấu hình box lớn để chứa nội dung
+ */
+/* .box-big: 大きなボックス(おおきなぼっくす) (Khối kích thước lớn)
+   1. Chức năng: Gộp 2 cột và 2 hàng để tạo khối lớn.
+   2. Lý do: Minh họa cách sử dụng grid-column và grid-row span.
+   3. Lưu ý: Chiếm tổng cộng 4 ô lưới cơ bản. */
+.box-big {
+  grid-column: span 2;
+  grid-row: span 2;
+}

@@ -1,1 +1,45 @@
-*{box-sizing:border-box;margin:0;padding:0}.grid-container{display:grid;gap:0px;padding:20px;grid-template-columns:1fr}@media(min-width: 768px){.grid-container{grid-template-columns:repeat(2, 1fr)}}@media(min-width: 1024px){.grid-container{grid-template-columns:repeat(4, 1fr)}}.grid-item{background-color:#051431;color:#fff;padding:30px 20px;font-family:sans-serif;font-weight:500;border-radius:0px}
+/* * (Universal selector): 全体選択子(ぜんたいせんたくし) (Chọn toàn bộ các phần tử)
+   1. Chức năng: Reset margin, padding và đặt box-sizing.
+   2. Lý do: Đảm bảo layout hiển thị chuẩn xác trên mọi trình duyệt.
+   3. Lưu ý: Sử dụng box-sizing: border-box. */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* .grid-container: グリッドコンテナ(ぐりっどこんてな) (Khung chứa Grid)
+   1. Chức năng: Thiết lập bố cục lưới đáp ứng từ 1 đến 4 cột.
+   2. Lý do: Minh họa kỹ thuật Responsive Grid.
+   3. Lưu ý: Mặc định là 1 cột trên mobile. */
+.grid-container {
+  display: grid;
+  gap: 0px;
+  padding: 20px;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* .grid-item: グリッドアイテム(ぐりっどあいてむ) (Phần tử con trong lưới)
+   1. Chức năng: Định dạng màu nền tối và màu chữ trắng.
+   2. Lý do: Tạo sự tương phản mạnh mẽ để dễ quan sát layout.
+   3. Lưu ý: Sử dụng màu nền #051431. */
+.grid-item {
+  background-color: #051431;
+  color: #fff;
+  padding: 30px 20px;
+  font-family: sans-serif;
+  font-weight: 500;
+  border-radius: 0px;
+}

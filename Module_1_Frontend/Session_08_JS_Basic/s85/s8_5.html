@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="vi">
+<!-- <head>: ヘッダー(へっだー) (Thông tin tiêu đề và cấu hình trang) -->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,7 +11,15 @@
       rel="stylesheet"
     />
   </head>
+  <!-- <body>: ボディ(ぼでぃ) (Thân trang web chứa nội dung Checkout)
+       1. Chức năng: Chứa toàn bộ giao diện xác nhận đặt phòng và thanh toán.
+       2. Lý do: Là container gốc cho Header, Checkout Container và Footer.
+       3. Lưu ý: Mọi thành phần hiển thị đều nằm trong thẻ này. -->
   <body>
+    <!-- <header>: ヘッダー(へっだー) (Phần đầu trang TripGuide)
+         1. Chức năng: Chứa Logo và các hành động của người dùng (tiền tệ, thông báo).
+         2. Lý do: Giúp người dùng nhận diện thương hiệu và quản lý tài khoản.
+         3. Lưu ý: Sử dụng class "header" để định dạng. -->
     <header class="header">
       <div class="container header-inner">
         <img src="./resource/logo.png" alt="TripGuide Logo" class="logo" />
@@ -19,7 +28,7 @@
           <span class="notification">🔔</span>
           <div class="avatar">
             <img
-              src="./resource/user.png"
+              src="./resource/user"
               alt="User Avatar"
               class="avatar-img"
             />
@@ -33,6 +42,10 @@
       <span class="active">Confirm and pay</span>
     </div>
 
+    <!-- <main>: メイン(めいん) (Vùng nội dung Checkout chính)
+         1. Chức năng: Chứa các phần Tour, Payment và Summary.
+         2. Lý do: Là khu vực trọng tâm để hoàn tất quy trình đặt phòng.
+         3. Lưu ý: Sử dụng layout 2 cột (Flex/Grid) cho phần nội dung và sidebar. -->
     <main class="checkout-container container">
       <h1 class="page-title">Confirm your Book</h1>
 
@@ -47,18 +60,18 @@
         </div>
         <div class="info-card">
           <div class="info-text">
-            <span class="label">Traveller</span>
+            <span class="label">Traveller</span>// Thêm nhãn "Traveller" cho phần tử thông tin hành trình
             <span class="value">1 Passenger</span>
           </div>
-          <span class="edit-icon">✏️</span>
+          <span class="edit-icon">✏️</span>// Thêm biểu tượng chỉnh sửa cho phần tử thông tin hành trình
         </div>
       </section>
 
-      <aside class="summary-section">
+      <aside class="summary-section">// Thêm phần tóm tắt đặt phòng bên cạnh phần thông tin hành trình
         <div class="summary-card">
           <h3>Switzerland Hotels and Places to Stay</h3>
           <div class="rating">
-            ⭐ 4.8 <span class="reviews">(122 reviews)</span>
+            ⭐ 4.8 <span class="reviews">(122 reviews)</span>// Thêm đánh giá sao và số lượng đánh giá cho khách sạn
           </div>
 
           <img
@@ -163,6 +176,10 @@
       </div>
     </section>
 
+    <!-- <footer>: フッター(ふったー) (Phần chân trang website)
+         1. Chức năng: Chứa thông tin giới thiệu, dịch vụ và hỗ trợ khách hàng.
+         2. Lý do: Cung cấp đầy đủ thông tin về doanh nghiệp và các liên kết bổ sung.
+         3. Lưu ý: Chia thành nhiều cột cho dễ quản lý. -->
     <footer class="site-footer container">
       <div class="footer-col brand-col">
         <img src="./resource/logo.png" alt="TripGuide Logo" />
@@ -209,6 +226,7 @@
       </div>
     </footer>
       <div style="margin-top: 30px; padding-top: 10px; border-top: 1px solid #ccc;">
+      <!-- <a>: アンカー(あんかー) (Nút quay lại trang Dashboard) -->
       <a class="back-dashboard" href="../../index.html" style="display:inline-block;padding:10px 16px;background:#d32f2f;color:#fff;border-radius:6px;text-decoration:none;font-weight:600;">← Quay lại Dashboard</a>
     </div>
   </body>

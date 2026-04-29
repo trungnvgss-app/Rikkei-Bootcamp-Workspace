@@ -1,0 +1,16 @@
+# Bỏ qua tất cả các file và thư mục linh tinh
+/*
+
+# CHỈ cho phép (whitelist) các thư mục Module_1 đến Module_5
+!/Module_1_Frontend/
+!/Module_2_Database/
+!/Module_3_Java_Core/
+!/Module_4_FE_IT/
+!/Module_5_Java_Web/
+
+# Cho phép file .gitignore này
+!.gitignore
+
+# Bỏ qua những file không cần thiết bên trong các Module (nếu có)
+**/.DS_Store
+**/Thumbs.db

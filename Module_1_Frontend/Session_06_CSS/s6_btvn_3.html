@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="vi">
+<!-- <head>: ヘッダー(へっだー) (Thông tin tiêu đề và cấu hình trang) -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio của TSUBASA</title>
+    <link rel="stylesheet" href="./s6_btvn_3.css" />
+  </head>
+  <!-- <body>: ボディ(ぼでぃ) (Thân trang web chứa Portfolio cá nhân)
+       1. Chức năng: Chứa toàn bộ các thành phần hiển thị của trang Portfolio.
+       2. Lý do: Là container gốc cho các phần Hero, Projects và Footer.
+       3. Lưu ý: Mọi thành phần hiển thị đều nằm trong thẻ này. -->
+  <body>
+    <!-- <header>: ヘッダー(へっだー) (Phần đầu trang chứa Logo và Nav)
+         1. Chức năng: Cung cấp thanh điều hướng và nhận diện thương hiệu.
+         2. Lý do: Giúp người dùng dễ dàng chuyển đổi giữa các mục nội dung.
+         3. Lưu ý: Sử dụng position: fixed hoặc layout linh hoạt trong CSS. -->
+    <header>
+      <div class="nav-container">
+        <div class="logo">Portfolio của TSUBASA</div>
+        <nav>
+          <a href="#">Home</a>
+          <a href="#">Projects</a>
+          <a href="#">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- <section>: セクション(せくしょん) (Phần giới thiệu chính - Hero Section)
+         1. Chức năng: Hiển thị avatar và lời chào mừng của tác giả.
+         2. Lý do: Tạo ấn tượng đầu tiên mạnh mẽ với khách truy cập.
+         3. Lưu ý: Sử dụng class "hero" để định dạng chiều cao và màu nền. -->
+    <section class="hero">
+      <div class="hero-container">
+        <div class="avatar-box">
+          <img src="https://via.placeholder.com/150" alt="Avatar TSUBASA" />
+        </div>
+        <div class="hero-text">
+          Xin chào! Tôi là <strong>TSUBASA</strong>, một nhà phát triển web sáng
+          tạo.
+        </div>
+      </div>
+    </section>
+
+    <!-- <section>: セクション(せくしょん) (Phần danh sách dự án)
+         1. Chức năng: Hiển thị lưới các dự án đã thực hiện.
+         2. Lý do: Chứng minh năng lực và kinh nghiệm thực tế của tác giả.
+         3. Lưu ý: Sử dụng class "projects" và "project-grid" để quản lý layout. -->
+    <section class="projects">
+      <div class="container">
+        <h2>Dự án của tôi</h2>
+        <div class="project-grid">
+          <div class="project-card">Dự án 1</div>
+          <div class="project-card">Dự án 2</div>
+          <div class="project-card">Dự án 3</div>
+          <div class="project-card">Dự án 4</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <footer>: フッター(ふったー) (Phần chân trang)
+         1. Chức năng: Chứa các liên kết mạng xã hội chuyên nghiệp.
+         2. Lý do: Cung cấp thông tin liên hệ và kết nối cuối trang.
+         3. Lưu ý: Sử dụng thẻ semantic footer. -->
+    <footer>
+      <p>
+        Kết nối với tôi trên <strong>LinkedIn</strong> | <strong>GitHub</strong>
+      </p>
+    </footer>
+      <div style="margin-top: 30px; padding-top: 10px; border-top: 1px solid #ccc;">
+      <!-- <a>: アンカー(あんかー) (Nút quay lại trang Dashboard) -->
+      <a class="back-dashboard" href="../index.html" style="display:inline-block;padding:10px 16px;background:#d32f2f;color:#fff;border-radius:6px;text-decoration:none;font-weight:600;">← Quay lại Dashboard</a>
+    </div>
+  </body>
+</html>

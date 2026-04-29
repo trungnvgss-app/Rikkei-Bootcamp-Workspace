@@ -1,0 +1,77 @@
+/* reset css mặc định */
+/* * (Universal selector): 全体選択子(ぜんたいせんたくし) (Chọn toàn bộ các phần tử)
+   1. Chức năng: Reset margin và padding mặc định của trình duyệt.
+   2. Lý do: Giúp các phần tử header, container, footer khít sát nhau theo ý đồ thiết kế.
+   3. Lưu ý: Sử dụng box-sizing: border-box. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/** * Cấu hình chung cho body để căn giữa layout và chọn font đẹp hơn
+ */
+/* body: ボディ(ぼでぃ) (Thân trang web)
+   1. Chức năng: Thiết lập font chữ mặc định cho toàn trang.
+   2. Lý do: Đảm bảo văn bản dễ đọc và đồng bộ.
+   3. Lưu ý: Sử dụng font Arial. */
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* .header: ヘッダー(へっだー) (Phần đầu trang)
+   1. Chức năng: Định dạng màu nền xanh dương và căn giữa nội dung tiêu đề.
+   2. Lý do: Tạo sự nhận diện cho trang web ở vị trí cao nhất.
+   3. Lưu ý: Sử dụng line-height: 50px để căn giữa chữ theo chiều dọc. */
+.header {
+  height: 50px;
+  background-color: rgb(57, 93, 211);
+  color: white;
+  line-height: 50px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  text-align: center;
+}
+/** * Cấu hình cho container chính chứa sidebar và content
+ * Sử dụng Flexbox để tạo layout 2 cột
+ */
+/* .container: コンテナ(こんてな) (Khung chứa chính)
+   1. Chức năng: Thiết lập layout Flexbox để chia Sidebar và Content.
+   2. Lý do: Tạo ra bố cục trang web 2 cột linh hoạt.
+   3. Lưu ý: Chiều cao được tính toán tự động bằng hàm calc(). */
+.container {
+  display: flex;
+  gap: 10px;
+  height: calc(100vh - 120px);
+  line-height: 50px;
+}
+
+.sidebar {
+  width: 25%;
+  background-color: #2da72d;
+  color: white;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.content {
+  flex: 1;
+  background-color: #eb3434;
+  color: white;
+  border-radius: 4px;
+  text-align: center;
+}
+/** * Cấu hình cho footer để tạo khung viền đẹp hơn
+ */
+/* .footer: フッター(ふったー) (Phần chân trang)
+   1. Chức năng: Định dạng màu nền tím và căn giữa thông tin bản quyền.
+   2. Lý do: Hoàn thiện cấu trúc trang web ở vị trí thấp nhất.
+   3. Lưu ý: Có margin-top: 10px để tách biệt với container phía trên. */
+.footer {
+  height: 50px;
+  background-color: purple;
+  margin-top: 10px;
+  border-radius: 4px;
+  color: white;
+  text-align: center;
+  line-height: 50px;
+}

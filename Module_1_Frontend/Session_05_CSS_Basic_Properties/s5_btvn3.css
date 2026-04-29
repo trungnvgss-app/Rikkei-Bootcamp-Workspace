@@ -1,4 +1,8 @@
-﻿body {
+/* body: ボディ(ぼでぃ) (Thân trang web)
+   1. Chức năng: Căn giữa nút bấm vào chính giữa màn hình bằng flexbox.
+   2. Lý do: Tạo giao diện tập trung và cân đối cho bài tập.
+   3. Lưu ý: Sử dụng min-height 100vh để chiếm hết chiều cao trình duyệt. */
+body {
   margin: 0;
   min-height: 100vh;
   display: flex;
@@ -8,10 +12,18 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* main: メイン(めいん) (Vùng nội dung chính)
+   1. Chức năng: Căn giữa nội dung văn bản bên trong.
+   2. Lý do: Đảm bảo nút bấm luôn ở vị trí trung tâm của container.
+   3. Lưu ý: Thường dùng để gộp nhóm các phần tử UI chính. */
 main {
   text-align: center;
 }
 
+/* button: ボタン(ぼたん) (Nút bấm tương tác)
+   1. Chức năng: Định dạng kiểu dáng nút với bo góc và hiệu ứng chuyển cảnh.
+   2. Lý do: Tạo ra một nút bấm hiện đại, có phản hồi khi tương tác.
+   3. Lưu ý: transition được dùng cho background-color, color và transform. */
 button {
   background-color: #e0e0e0;
   color: #333333;
@@ -23,10 +35,15 @@ button {
   transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
+/* button:hover: ボタンホバー(ぼたんほばー) (Hiệu ứng di chuột) */
 button:hover {
   transform: translateY(-1px);
 }
 
+/* button.clicked: クリックされたボタン(くりっくされたぼたん) (Trạng thái sau khi click)
+   1. Chức năng: Đổi màu nền sang đỏ và chữ sang trắng khi class "clicked" được thêm vào.
+   2. Lý do: Minh họa sự thay đổi style thông qua JavaScript.
+   3. Lưu ý: Class này được điều khiển bởi file script trong HTML. */
 button.clicked {
   background-color: #ff0000;
   color: #ffffff;

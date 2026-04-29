@@ -1,0 +1,58 @@
+/* Xóa margin mặc định của trình duyệt để nhìn gọn hơn */
+/* * (Universal selector): 全体選択子(ぜんたいせんたくし) (Chọn toàn bộ các phần tử)
+   1. Chức năng: Reset margin và padding mặc định của trình duyệt.
+   2. Lý do: Giúp layout Grid hiển thị chính xác mà không bị lệch do khoảng cách thừa.
+   3. Lưu ý: Sử dụng box-sizing: border-box. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* body: ボディ(ぼでぃ) (Thân trang web)
+   1. Chức năng: Tạo khoảng đệm bên ngoài và thiết lập font chữ.
+   2. Lý do: Giúp layout không bị sát vào mép màn hình, dễ quan sát hơn.
+   3. Lưu ý: Sử dụng font Arial. */
+body {
+  padding: 50px;
+  font-family: Arial, sans-serif;
+}
+
+/* =========================================
+   CẤU HÌNH THẺ CHA (TẠO LƯỚI GRID)
+========================================= */
+/* .container: グリッドコンテナ(ぐりっどこんてな) (Khung chứa Grid)
+   1. Chức năng: Thiết lập bố cục lưới với 4 cột bằng nhau.
+   2. Lý do: Minh họa sức mạnh của CSS Grid trong việc chia cột tự động.
+   3. Lưu ý: Sử dụng repeat(4, 1fr) và gap: 10px. */
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 10px;
+  border: 2px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+/* =========================================
+   CẤU HÌNH THẺ CON (CÁC KHỐI MÀU XANH)
+========================================= */
+/* .box: ボックス(ぼっくす) (Khối con trong lưới)
+   1. Chức năng: Định dạng màu nền, màu chữ và căn giữa nội dung số.
+   2. Lý do: Tạo đối tượng trực quan để quan sát vị trí trong Grid.
+   3. Lưu ý: Sử dụng Flexbox bên trong Grid item để căn giữa văn bản. */
+.box {
+  background-color: #2ecc71;
+  color: white;
+  font-weight: bold;
+  height: 80px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box.large {
+  grid-column: span 2; /* Chiếm 2 cột */
+  grid-row: span 2; /* Chiếm 2 hàng */
+}

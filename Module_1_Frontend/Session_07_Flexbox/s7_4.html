@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<!-- <head>: ヘッダー(へっだー) (Thông tin tiêu đề và cấu hình trang) -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="s7_4.css" />
+  </head>
+  <!-- <body>: ボディ(ぼでぃ) (Thân trang web chứa bố cục hoàn chỉnh)
+       1. Chức năng: Chứa toàn bộ các thành phần của một trang web cơ bản.
+       2. Lý do: Là container gốc cho Header, Container (Sidebar + Content) và Footer.
+       3. Lưu ý: Mọi thành phần hiển thị đều nằm trong thẻ này. -->
+  <body>
+    <!-- <header>: ヘッダー(へっだー) (Phần đầu trang)
+         1. Chức năng: Hiển thị tên trang web hoặc thanh điều hướng.
+         2. Lý do: Cung cấp thông tin nhận diện ở phía trên cùng.
+         3. Lưu ý: Có class "header" để định dạng trong CSS. -->
+    <header class="header">Header</header>
+    <!-- <section>: セクション(せくしょん) (Vùng chứa Sidebar và Content)
+         1. Chức năng: Sử dụng Flexbox để chia trang thành hai cột.
+         2. Lý do: Tạo bố cục trang web truyền thống với thanh bên và nội dung chính.
+         3. Lưu ý: Có class "container" để quản lý layout flex. -->
+    <section class="container">
+      <!-- <article>: 記事(きじ) (Thanh bên - Sidebar)
+           1. Chức năng: Chứa các liên kết phụ hoặc thông tin bổ sung.
+           2. Lý do: Sử dụng thẻ semantic article để đại diện cho nội dung độc lập.
+           3. Lưu ý: Có class "sidebar" để định dạng chiều rộng và màu nền. -->
+      <article class="sidebar">Sidebar</article>
+      <article class="content">Content</article>
+    </section>
+    <!-- <footer>: フッター(ふったー) (Phần chân trang)
+         1. Chức năng: Hiển thị thông tin bản quyền và liên hệ.
+         2. Lý do: Hoàn thiện cấu trúc trang web ở phía dưới cùng.
+         3. Lưu ý: Có class "footer" để định dạng màu sắc. -->
+    <footer class="footer">Footer</footer>
+      <div style="margin-top: 30px; padding-top: 10px; border-top: 1px solid #ccc;">
+      <!-- <a>: アンカー(あんかー) (Nút quay lại trang Dashboard) -->
+      <a class="back-dashboard" href="../index.html" style="display:inline-block;padding:10px 16px;background:#d32f2f;color:#fff;border-radius:6px;text-decoration:none;font-weight:600;">← Quay lại Dashboard</a>
+    </div>
+  </body>
+</html>

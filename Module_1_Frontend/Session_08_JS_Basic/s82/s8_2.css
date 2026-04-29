@@ -1,9 +1,17 @@
+/* * (Universal selector): 全体選択子(ぜんたいせんたくし) (Chọn toàn bộ các phần tử)
+   1. Chức năng: Reset margin, padding và đặt box-sizing.
+   2. Lý do: Giúp layout Grid hiển thị chính xác trên mọi trình duyệt.
+   3. Lưu ý: Sử dụng box-sizing: border-box. */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* .grid-container: グリッドコンテナ(ぐりっどこんてな) (Khung chứa Grid)
+   1. Chức năng: Thiết lập bố cục lưới mặc định 1 cột (Mobile first).
+   2. Lý do: Minh họa cách xây dựng layout đáp ứng (Responsive).
+   3. Lưu ý: Sử dụng gap: 20px để tạo khoảng cách giữa các ô. */
 .grid-container {
   display: grid;
   gap: 20px;
@@ -21,6 +29,10 @@
   }
 }
 
+/* .grid-item: グリッドアイテム(ぐりっどあいてむ) (Phần tử con trong lưới)
+   1. Chức năng: Định dạng màu nền và căn giữa văn bản cho từng ô.
+   2. Lý do: Tạo đối tượng trực quan để kiểm chứng layout 1-2-4 cột.
+   3. Lưu ý: Sử dụng font-family sans-serif. */
 .grid-item {
   background-color: #f07e7e;
   color: #ffffff;

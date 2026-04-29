@@ -1,23 +1,45 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="vi">
+<!-- <head>: ヘッダー(へっだー) (Thông tin tiêu đề và cấu hình trang) -->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rotation Boxes</title>
     <link rel="stylesheet" href="s5_btvn4.css" />
   </head>
+  <!-- <body>: ボディ(ぼでぃ) (Thân trang web chứa các khối xoay)
+       1. Chức năng: Chứa toàn bộ nội dung hiển thị của bài tập animation.
+       2. Lý do: Là container gốc để áp dụng CSS toàn trang.
+       3. Lưu ý: Mọi thành phần hiển thị đều nằm trong thẻ này. -->
   <body>
+    <!-- <main>: メイン(めいん) (Nội dung chính của trang)
+         1. Chức năng: Bao bọc khu vực hiển thị các khối animation.
+         2. Lý do: Giúp cấu trúc trang rõ ràng và chuẩn SEO.
+         3. Lưu ý: Chỉ nên có một thẻ main duy nhất. -->
     <main>
+      <!-- <section>: セクション(せくしょん) (Khung chứa các khối hình)
+           1. Chức năng: Gộp nhóm các thẻ div đại diện cho các khối xoay.
+           2. Lý do: Dễ dàng áp dụng flexbox để căn chỉnh vị trí các khối.
+           3. Lưu ý: Có class="box-container" để định dạng trong CSS. -->
       <section class="box-container">
+        <!-- <div>: コンテナ要素(こんてなようそ) (Khối xoay 4 vòng)
+             1. Chức năng: Hiển thị khối hình vuông thực hiện animation xoay 4 lần.
+             2. Lý do: Minh họa cách giới hạn số lần chạy animation (iteration-count).
+             3. Lưu ý: Sử dụng class "box" và "rotate-four". -->
         <div class="box rotate-four">
           <span>4 vòng</span>
         </div>
+        <!-- <div>: コンテナ要素(こんてなようそ) (Khối xoay vĩnh viễn)
+             1. Chức năng: Hiển thị khối hình vuông thực hiện animation xoay vô tận.
+             2. Lý do: Minh họa cách cấu hình animation lặp lại vĩnh viễn (infinite).
+             3. Lưu ý: Sử dụng class "box" và "rotate-forever". -->
         <div class="box rotate-forever">
           <span>Xoay vĩnh viễn</span>
         </div>
       </section>
     </main>
       <div style="margin-top: 30px; padding-top: 10px; border-top: 1px solid #ccc;">
+      <!-- <a>: アンカー(あんかー) (Nút quay lại trang Dashboard) -->
       <a class="back-dashboard" href="../index.html" style="display:inline-block;padding:10px 16px;background:#d32f2f;color:#fff;border-radius:6px;text-decoration:none;font-weight:600;">← Quay lại Dashboard</a>
     </div>
   </body>

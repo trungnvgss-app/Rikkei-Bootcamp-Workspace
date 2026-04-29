@@ -1,1 +1,111 @@
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}body{font-family:sans-serif;color:#333}.header{background-color:#333;color:#fff;display:flex;justify-content:space-between;align-items:center;padding:15px 30px}.header .logo{font-size:20px;font-weight:bold}.header .nav-links{display:flex;gap:20px}.header .nav-links a{color:#fff;text-decoration:none;font-size:16px}.header .nav-links a:hover{text-decoration:underline}.hero-section{padding:20px;max-width:1200px;margin:0 auto}.hero-section .hero-placeholder{background-color:#ccc;color:#888;display:flex;justify-content:center;align-items:center;font-size:2rem;height:200px;border-radius:4px}@media(min-width: 768px){.hero-section .hero-placeholder{height:400px;font-size:3rem}}.features-section{display:grid;gap:15px;padding:0 20px 40px 20px;max-width:1200px;margin:0 auto;grid-template-columns:1fr}.features-section .feature-item{background-color:#f5f5f5;padding:30px 20px;text-align:center;border-radius:4px;font-size:16px}@media(min-width: 768px){.features-section{grid-template-columns:repeat(2, 1fr)}.features-section .item-full{grid-column:span 2}}
+/* * (Universal selector): 全体選択子(ぜんたいせんたくし) (Chọn toàn bộ các phần tử)
+   1. Chức năng: Reset margin, padding và đặt box-sizing cho trang web.
+   2. Lý do: Giúp kiểm soát kích thước các phần tử chính xác, đặc biệt trong layout Grid/Flex.
+   3. Lưu ý: Bao gồm cả các pseudo-elements ::before và ::after. */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* body: ボディ(ぼでぃ) (Thân trang web)
+   1. Chức năng: Thiết lập font chữ và màu chữ mặc định.
+   2. Lý do: Đảm bảo văn bản hiển thị nhất quán trên toàn bộ Landing Page.
+   3. Lưu ý: Sử dụng font sans-serif và màu chữ #333. */
+body {
+  font-family: sans-serif;
+  color: #333;
+}
+
+/* .header: ヘッダー(へっだー) (Phần đầu trang)
+   1. Chức năng: Tạo thanh điều hướng tối màu với layout Flexbox.
+   2. Lý do: Phân tách rõ ràng giữa Logo và các liên kết Menu.
+   3. Lưu ý: Sử dụng background-color: #333 và justify-content: space-between. */
+.header {
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+}
+
+.header .logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.header .nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.header .nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.header .nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* .hero-section: ヒーローセクション(ひーろーせくしょん) (Vùng Banner chính)
+   1. Chức năng: Giới hạn chiều rộng và căn giữa banner.
+   2. Lý do: Tập trung sự chú ý vào thông điệp chính của trang web.
+   3. Lưu ý: Sử dụng max-width: 1200px. */
+.hero-section {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-section .hero-placeholder {
+  background-color: #ccc;
+  color: #888;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  height: 200px;
+  border-radius: 4px;
+}
+
+@media (min-width: 768px) {
+  .hero-section .hero-placeholder {
+    height: 400px;
+    font-size: 3rem;
+  }
+}
+
+/* .features-section: 機能セクション(きのうせくしょん) (Phần giới thiệu tính năng)
+   1. Chức năng: Thiết lập lưới Grid để hiển thị các khối giới thiệu.
+   2. Lý do: Tổ chức nội dung theo dạng cột linh hoạt theo kích thước màn hình.
+   3. Lưu ý: Mặc định là 1 cột trên mobile, chuyển sang 2 cột trên tablet/desktop. */
+.features-section {
+  display: grid;
+  gap: 15px;
+  padding: 0 20px 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  grid-template-columns: 1fr;
+}
+
+.features-section .feature-item {
+  background-color: #f5f5f5;
+  padding: 30px 20px;
+  text-align: center;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+@media (min-width: 768px) {
+  .features-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .features-section .item-full {
+    grid-column: span 2;
+  }
+}

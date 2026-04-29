@@ -1,0 +1,152 @@
+/* Reset CSS cơ bản */
+/* * (Universal selector): 全体選択子(ぜんたいせんたくし) (Chọn toàn bộ các phần tử)
+   1. Chức năng: Reset margin, padding và đặt font chữ mặc định cho toàn trang.
+   2. Lý do: Giúp giao diện hiển thị đồng nhất và dễ kiểm soát kích thước.
+   3. Lưu ý: Sử dụng font Arial làm cơ sở. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Container dùng chung để căn lề giữa */
+/* .container: コンテナ(こんてな) (Khung chứa dùng chung)
+   1. Chức năng: Giới hạn chiều rộng tối đa và căn giữa nội dung vào tâm màn hình.
+   2. Lý do: Giữ cho nội dung không bị trải quá rộng trên màn hình lớn.
+   3. Lưu ý: Sử dụng max-width 1200px. */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Navbar màu xanh lá */
+/* .navbar: ナビゲーションバー(なびげーしょんばー) (Thanh điều hướng)
+   1. Chức năng: Đặt màu nền xanh lá và tạo khoảng đệm cho menu.
+   2. Lý do: Làm nổi bật phần điều hướng trên cùng của trang web.
+   3. Lưu ý: Sử dụng màu #4caf50 đặc trưng. */
+.navbar {
+  background-color: #4caf50; /* Màu xanh lá trong ảnh */
+  padding: 15px 0;
+  color: white;
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 14px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Hero Section */
+/* .hero: ヒーローセクション(ひーろーせくしょん) (Vùng giới thiệu chính)
+   1. Chức năng: Tạo không gian lớn với nền xám nhạt để hiển thị thông điệp chính.
+   2. Lý do: Thu hút sự chú ý của người dùng ngay khi tải trang.
+   3. Lưu ý: Sử dụng padding lớn (100px) để tạo sự thông thoáng. */
+.hero {
+  padding: 100px 0;
+  text-align: center;
+  background-color: #f4f4f4; /* Nền xám nhạt nhẹ */
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.btn-get-started {
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.btn-get-started:hover {
+  background-color: #45a049;
+}
+
+/* Features Section */
+/* .features: 機能セクション(きのうせくしょん) (Vùng giới thiệu tính năng)
+   1. Chức năng: Tạo khoảng đệm cho khu vực hiển thị các khối tính năng.
+   2. Lý do: Phân tách rõ ràng với phần Hero phía trên.
+   3. Lưu ý: Nền trắng sạch sẽ. */
+.features {
+  padding: 50px 0;
+  background-color: #ffffff;
+}
+
+.feature-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.feature-box {
+  flex: 1;
+  background-color: #ddd; /* Màu xám của các ô tính năng */
+  padding: 25px;
+  text-align: center;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Footer màu đen xám */
+/* footer: フッター(ふったー) (Phần chân trang)
+   1. Chức năng: Đặt màu nền tối và màu chữ trắng cho thông tin cuối trang.
+   2. Lý do: Hoàn thiện thiết kế và cung cấp thông tin liên hệ.
+   3. Lưu ý: Sử dụng màu nền #333. */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 30px 0;
+}
+
+/* Hỗ trợ hiển thị trên điện thoại */
+@media (max-width: 768px) {
+  .nav-wrapper,
+  .feature-grid {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav {
+    margin-top: 15px;
+  }
+
+  nav a {
+    margin: 0 10px;
+  }
+
+  .feature-box {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}

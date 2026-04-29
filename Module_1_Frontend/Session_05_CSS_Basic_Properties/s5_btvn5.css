@@ -1,7 +1,15 @@
-﻿:root {
+/* root: ルート(るーと) (Gốc tài liệu)
+   1. Chức năng: Thiết lập hệ màu tối (dark mode) cho toàn bộ trang.
+   2. Lý do: Giúp các hiệu ứng màu sắc nổi bật hơn.
+   3. Lưu ý: Sử dụng thuộc tính color-scheme. */
+:root {
   color-scheme: dark;
 }
 
+/* body: ボディ(ぼでぃ) (Thân trang web)
+   1. Chức năng: Căn giữa khu vực demo vào tâm màn hình.
+   2. Lý do: Tạo không gian trình bày chuyên nghiệp cho các hiệu ứng.
+   3. Lưu ý: Sử dụng font-family Segoe UI. */
 body {
   margin: 0;
   min-height: 100vh;
@@ -12,6 +20,10 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* .demo-shell: デモシェル(でもしぇる) (Khung bao ngoài khu vực demo)
+   1. Chức năng: Tạo bố cục lưới (Grid) để sắp xếp các demo card.
+   2. Lý do: Giúp các khối card tự động điều chỉnh số lượng cột theo chiều rộng màn hình (repeat auto-fit).
+   3. Lưu ý: Sử dụng gap: 24px để tạo khoảng cách giữa các card. */
 .demo-shell {
   max-width: 1120px;
   width: 100%;
@@ -22,6 +34,10 @@ body {
   gap: 24px;
 }
 
+/* .demo-card: デモカード(でもかーど) (Thẻ hiển thị hiệu ứng)
+   1. Chức năng: Định dạng chung cho các khối card như kích thước, màu nền và đổ bóng.
+   2. Lý do: Tạo sự thống nhất cho các đối tượng demo.
+   3. Lưu ý: Có transition cho nhiều thuộc tính (transform, opacity, border-radius...). */
 .demo-card {
   height: 240px;
   background-color: #4d4b5b;
@@ -41,6 +57,7 @@ body {
   font-weight: 700;
 }
 
+/* .rotate-hover:hover: 回転ホバー(かいてんほばー) (Xoay khi di chuột) */
 .rotate-hover:hover {
   transform: rotate(20deg) scale(1.02);
 }
@@ -50,6 +67,7 @@ body {
   height: 240px;
 }
 
+/* .square-circle-hover:hover: 形変化ホバー(かたちへんかほばー) (Biến từ hình vuông sang tròn) */
 .square-circle-hover:hover {
   border-radius: 50%;
   transform: scale(1.02);

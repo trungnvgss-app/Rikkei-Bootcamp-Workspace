@@ -1,0 +1,152 @@
+/* Cài đặt chung */
+/* * (Universal selector): 全体選択子(ぜんたいせんたくし) (Chọn toàn bộ phần tử)
+   1. Chức năng: Reset margin, padding và đặt box-sizing cho trang web.
+   2. Lý do: Giúp layout hiển thị chính xác và không bị tràn viền.
+   3. Lưu ý: Sử dụng font Segoe UI làm mặc định. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* body: ボディ(ぼでぃ) (Thân trang web)
+   1. Chức năng: Đặt màu nền xám nhạt và màu chữ đen cho toàn trang.
+   2. Lý do: Tạo sự dễ chịu cho mắt và tăng khả năng đọc.
+   3. Lưu ý: Sử dụng line-height: 1.6 để giãn dòng. */
+body {
+  background-color: #f5f5f5;
+  color: #000;
+  line-height: 1.6;
+}
+
+/* Header */
+/* header: ヘッダー(へっだー) (Phần đầu trang)
+   1. Chức năng: Đặt màu nền tối và khoảng đệm cho thanh menu.
+   2. Lý do: Phân tách rõ ràng phần điều hướng với nội dung giới thiệu.
+   3. Lưu ý: Sử dụng màu #2d3436. */
+header {
+  background-color: #2d3436; /* Màu xám đen của header */
+  color: white;
+  padding: 25px 0;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+/* Hero Section (Phần màu trắng giữa) */
+/* .hero: ヒーローセクション(ひーろーせくしょん) (Vùng giới thiệu nổi bật)
+   1. Chức năng: Đặt nền trắng và tạo khoảng đệm lớn cho phần chào mừng.
+   2. Lý do: Làm nổi bật thông tin cá nhân của tác giả.
+   3. Lưu ý: Là điểm nhấn chính của trang Portfolio. */
+.hero {
+  background-color: #ffffff;
+  padding: 60px 20px;
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.avatar-box img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 2px solid #2d3436;
+  background-color: #3498db; /* Nền xanh cho avatar giống trong ảnh */
+  object-fit: cover;
+}
+
+.hero-text {
+  font-size: 24px;
+}
+
+/* Projects Section */
+/* .projects: プロジェクトセクション(ぷろじぇくとせくしょん) (Vùng danh sách dự án)
+   1. Chức năng: Căn chỉnh chiều rộng tối đa và tạo khoảng đệm cho khu vực dự án.
+   2. Lý do: Tổ chức nội dung các sản phẩm đã làm một cách chuyên nghiệp.
+   3. Lưu ý: max-width là 1200px để giữ nội dung tập trung. */
+.projects {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.projects h2 {
+  font-size: 24px;
+  margin-bottom: 25px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  background-color: #2d3436;
+  color: white;
+  padding: 30px;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  background-color: #3d4446;
+}
+
+/* Footer */
+/* footer: フッター(ふったー) (Phần chân trang)
+   1. Chức năng: Căn giữa văn bản và tạo khoảng đệm cho thông tin liên hệ.
+   2. Lý do: Hoàn thiện cấu trúc trang web và cung cấp liên kết ngoài.
+   3. Lưu ý: Font-size nhỏ hơn (14px). */
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Hỗ trợ mobile */
+@media (max-width: 768px) {
+  .nav-container,
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logo {
+    margin-bottom: 15px;
+  }
+
+  nav a {
+    margin: 0 10px;
+  }
+}

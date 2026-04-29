@@ -1,0 +1,112 @@
+/* header: ヘッダー(へっだー) (Phần đầu trang)
+   1. Chức năng: Thiết lập chiều cao và màu nền trắng cho thanh header.
+   2. Lý do: Tạo không gian chứa Logo và các thanh điều hướng.
+   3. Lưu ý: Chiều cao cố định 100px. */
+header {
+  height: 100px;
+  background-color: #ffffff;
+}
+
+/* .header_container: ヘッダーコンテナ(へっだーこんてな) (Khung chứa nội dung Header)
+   1. Chức năng: Căn chỉnh Logo và khối chức năng sang hai bên bằng Flexbox.
+   2. Lý do: Giúp bố cục thanh điều hướng cân đối và chuyên nghiệp.
+   3. Lưu ý: Sử dụng justify-content: space-between. */
+.header_container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header_container > img {
+}
+
+.header_container > .left_block {
+}
+
+/* .left_block: 左ブロック(ひだりぶろっく) (Khối chức năng bên phải)
+   1. Chức năng: Chứa các icon thông báo, tiền tệ và avatar người dùng.
+   2. Lý do: Gom nhóm các hành động của người dùng vào một vị trí dễ tiếp cận.
+   3. Lưu ý: Sử dụng Flexbox để sắp hàng ngang các icon. */
+.left_block {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  font-size: 24px;
+}
+
+.left_block > span {
+  font-weight: 500px;
+}
+
+.left_block > img {
+  margin: 0 10px;
+  height: 1em;
+}
+
+.left_block > .notice {
+  font-size: 1em;
+}
+
+/* .notice: 通知(つうち) (Biểu tượng thông báo)
+   1. Chức năng: Hiển thị icon chuông và số lượng thông báo chưa đọc.
+   2. Lý do: Cung cấp phản hồi tức thì về các cập nhật mới cho người dùng.
+   3. Lưu ý: Sử dụng position: relative để định vị badge số thông báo. */
+.notice {
+  position: relative;
+  margin-right: 10px;
+}
+
+.notice > i {
+}
+
+.notice > p {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background-color: rgb(240, 33, 33);
+  right: -3px;
+  top: 3px;
+  font-size: 12px;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left_block > .user_box {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.left_block > .user_box::before {
+  content: "";
+  font-weight: 100;
+  display: inline-block;
+  width: 2px;
+  height: 50%;
+  margin: 0 15px;
+  background-color: lightgray;
+}
+
+/* .avatar: アバター(あばたー) (Ảnh đại diện người dùng)
+   1. Chức năng: Hiển thị hình ảnh cá nhân của người dùng hiện tại.
+   2. Lý do: Giúp cá nhân hóa trải nghiệm sử dụng trang web.
+   3. Lưu ý: Bo tròn 50% để tạo hình tròn cho ảnh. */
+.user_box > .avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+main {
+  height: 100vh;
+  background-color: white;
+}
+
+footer {
+  height: 120px;
+  background-color: blue;
+}

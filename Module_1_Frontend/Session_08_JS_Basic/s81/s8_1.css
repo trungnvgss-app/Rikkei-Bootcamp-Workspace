@@ -1,19 +1,35 @@
+/* * (Universal selector): 全体選択子(ぜんたいせんたくし) (Chọn toàn bộ các phần tử)
+   1. Chức năng: Reset margin, padding và đặt box-sizing cho trang web.
+   2. Lý do: Đảm bảo các item không bị lệch do khoảng cách mặc định của trình duyệt.
+   3. Lưu ý: Sử dụng box-sizing: border-box. */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+/* body: ボディ(ぼでぃ) (Thân trang web)
+   1. Chức năng: Tạo khoảng đệm bên ngoài và thiết lập font chữ.
+   2. Lý do: Giúp bài thực hành trông thoáng và dễ quan sát hơn.
+   3. Lưu ý: Sử dụng font Arial. */
 body {
   padding: 50px;
   font-family: Arial, sans-serif;
 }
+/* .flex-container: フレックスコンテナ(ふれっくすこんてな) (Khung chứa Flexbox)
+   1. Chức năng: Thiết lập layout Flexbox với khả năng xuống dòng.
+   2. Lý do: Quản lý vị trí của các item con một cách linh hoạt.
+   3. Lưu ý: Sử dụng flex-wrap: wrap. */
 .flex-container {
   display: flex;
   gap: 2px;
   flex-wrap: wrap;
 }
+/* .flex-item: フレックスアイテム(ふれっくすあいてむ) (Phần tử con trong Flexbox)
+   1. Chức năng: Định dạng chiều rộng và màu nền cho các item nhỏ.
+   2. Lý do: Minh họa cách chia cột trong Flexbox.
+   3. Lưu ý: Sử dụng calc(50% - 4px) để tính toán chiều rộng chính xác. */
 .flex-item {
-  width: 50% - 2px;
+  width: calc(50% - 4px);
   height: 50px;
   background-color: lightblue;
   margin: 2px;

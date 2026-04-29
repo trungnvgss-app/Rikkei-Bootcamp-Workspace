@@ -1,0 +1,22 @@
+/* .flex-container: フレックスコンテナ(ふれっくすこんてな) (Khung chứa Flexbox)
+   1. Chức năng: Thiết lập môi trường Flexbox và căn giữa phần tử con theo cả hai trục.
+   2. Lý do: Là cách hiện đại và hiệu quả nhất để căn giữa nội dung.
+   3. Lưu ý: Sử dụng height: 100vh để chiếm toàn bộ chiều cao màn hình. */
+.flex-container {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+/* .flex-item: フレックスアイテム(ふれっくすあいてむ) (Phần tử con trong Flexbox)
+   1. Chức năng: Định dạng kích thước và màu nền cho khối nội dung được căn giữa.
+   2. Lý do: Tạo đối tượng trực quan để kiểm chứng việc căn giữa của container.
+   3. Lưu ý: Sử dụng line-height bằng height để căn giữa chữ theo chiều dọc. */
+.flex-item {
+  width: 100px;
+  height: 100px;
+  background-color: rgb(13, 124, 124);
+  color: white;
+  text-align: center;
+  line-height: 100px;
+}

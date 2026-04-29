@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="vi">
+<!-- <head>: ヘッダー(へっだー) (Thông tin tiêu đề và cấu hình trang) -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng Ký</title>
+    <link rel="stylesheet" href="./s6_btvn_2.css" />
+  </head>
+  <!-- <body>: ボディ(ぼでぃ) (Thân trang web chứa form đăng ký)
+       1. Chức năng: Chứa toàn bộ giao diện nhập liệu từ người dùng.
+       2. Lý do: Là container gốc cho bài tập thực hành thiết kế form.
+       3. Lưu ý: Mọi thành phần hiển thị đều nằm trong thẻ này. -->
+  <body>
+    <!-- <div>: コンテナ要素(こんてなようそ) (Khung bao ngoài form đăng ký)
+         1. Chức năng: Căn giữa form vào tâm màn hình.
+         2. Lý do: Giúp giao diện cân đối và chuyên nghiệp.
+         3. Lưu ý: Có class "register-container" để định dạng CSS. -->
+    <div class="register-container">
+      <!-- <form>: フォーム(ふぉーむ) (Biểu mẫu đăng ký tài khoản)
+           1. Chức năng: Chứa các ô nhập liệu và nút bấm để gửi thông tin.
+           2. Lý do: Là thẻ chuẩn để xử lý dữ liệu nhập từ người dùng.
+           3. Lưu ý: Có class "register-form" để định dạng viền và đổ bóng. -->
+      <form class="register-form">
+        <h2>Đăng Ký</h2>
+
+        <div class="form-group">
+          <label for="fullname">Tên:</label>
+          <!-- <input>: 入力要素(にゅうりょくようそ) (Ô nhập tên người dùng)
+               1. Chức năng: Cho phép người dùng nhập văn bản (Họ tên).
+               2. Lý do: Thu thập thông tin định danh cá nhân.
+               3. Lưu ý: Sử dụng type="text" và có id để liên kết với label. -->
+          <input type="text" id="fullname" name="fullname" />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Mật khẩu:</label>
+          <input type="password" id="password" name="password" />
+        </div>
+
+        <!-- <button>: ボタン(ぼたん) (Nút gửi biểu mẫu)
+             1. Chức năng: Kích hoạt hành động gửi dữ liệu form khi click.
+             2. Lý do: Cung cấp điểm tương tác cuối cùng để hoàn tất đăng ký.
+             3. Lưu ý: Sử dụng type="submit" và có class "btn-submit". -->
+        <button type="submit" class="btn-submit">Đăng Ký</button>
+      </form>
+    </div>
+      <div style="margin-top: 30px; padding-top: 10px; border-top: 1px solid #ccc;">
+      <!-- <a>: アンカー(あんかー) (Nút quay lại trang Dashboard) -->
+      <a class="back-dashboard" href="../index.html" style="display:inline-block;padding:10px 16px;background:#d32f2f;color:#fff;border-radius:6px;text-decoration:none;font-weight:600;">← Quay lại Dashboard</a>
+    </div>
+  </body>
+</html>

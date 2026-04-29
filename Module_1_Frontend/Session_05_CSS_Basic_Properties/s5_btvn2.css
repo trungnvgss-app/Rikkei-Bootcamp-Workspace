@@ -21,6 +21,7 @@
   text-align: center;
 }
 
+/* .item:hover: アイテムホバー(あいてむほばー) (Hiệu ứng khi di chuột vào mục) */
 .item:hover {
   background-color: #525252;
   color: #ffffff;

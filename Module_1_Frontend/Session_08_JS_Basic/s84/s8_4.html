@@ -1,31 +1,49 @@
 <!doctype html>
 <html lang="vi">
+<!-- <head>: ヘッダー(へっだー) (Thông tin tiêu đề và cấu hình trang) -->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Landing Page Responsive</title>
     <link rel="stylesheet" href="s8_4.css" />
   </head>
+  <!-- <body>: ボディ(ぼでぃ) (Thân trang web chứa Landing Page)
+       1. Chức năng: Chứa toàn bộ nội dung của trang Landing Page mẫu.
+       2. Lý do: Là container gốc cho các phần Header, Hero và Features.
+       3. Lưu ý: Mọi thành phần hiển thị đều nằm trong thẻ này. -->
   <body>
+    <!-- <header>: ヘッダー(へっだー) (Phần đầu trang)
+         1. Chức năng: Chứa Logo và menu điều hướng.
+         2. Lý do: Giúp người dùng dễ dàng chuyển hướng giữa các mục chính.
+         3. Lưu ý: Sử dụng Flexbox để căn chỉnh logo và menu. -->
     <header class="header">
       <div class="logo">Logo</div>
-      <nav class="nav-links"></nav>
+      <nav class="nav-links">
         <a href="#">Home</a>
         <a href="#">About</a>
         <a href="#">Contact</a>
       </nav>
     </header>
 
+    <!-- <section>: セクション(せくしょん) (Vùng Hero - Banner chính)
+         1. Chức năng: Hiển thị hình ảnh hoặc thông điệp nổi bật.
+         2. Lý do: Thu hút sự chú ý của người dùng ngay khi vào trang.
+         3. Lưu ý: Có class "hero-section" để định dạng chiều cao. -->
     <section class="hero-section">
       <div class="hero-placeholder">1200 x 400</div>
     </section>
 
+    <!-- <section>: セクション(せくしょん) (Phần tính năng/giới thiệu)
+         1. Chức năng: Sử dụng Flexbox để hiển thị các khối thông tin giới thiệu.
+         2. Lý do: Cung cấp thông tin chi tiết về sản phẩm hoặc dịch vụ.
+         3. Lưu ý: Sử dụng class "features-section" với flex-wrap. -->
     <section class="features-section">
       <div class="feature-item">Giới Thiệu 1</div>
       <div class="feature-item">Giới Thiệu 2</div>
       <div class="feature-item item-full">Giới Thiệu 3</div>
     </section>
       <div style="margin-top: 30px; padding-top: 10px; border-top: 1px solid #ccc;">
+      <!-- <a>: アンカー(あんかー) (Nút quay lại trang Dashboard) -->
       <a class="back-dashboard" href="../../index.html" style="display:inline-block;padding:10px 16px;background:#d32f2f;color:#fff;border-radius:6px;text-decoration:none;font-weight:600;">← Quay lại Dashboard</a>
     </div>
   </body>

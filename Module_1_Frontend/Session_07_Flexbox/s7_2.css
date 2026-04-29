@@ -1,0 +1,25 @@
+/* .flex-container: フレックスコンテナ(ふれっくすこんてな) (Khung chứa Flexbox)
+   1. Chức năng: Thiết lập layout Flex với khả năng tự động xuống dòng (wrap).
+   2. Lý do: Đảm bảo các item không bị nén quá nhỏ khi số lượng tăng lên.
+   3. Lưu ý: Sử dụng gap: 20px để tạo khoảng cách đều giữa các item. */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  border: 2px solid green;
+  border-radius: 8px;
+  padding: 10px;
+}
+/* .flex-item: フレックスアイテム(ふれっくすあいてむ) (Phần tử con trong Flexbox)
+   1. Chức năng: Tính toán chiều rộng để hiển thị 4 item trên một hàng.
+   2. Lý do: Thực hành sử dụng hàm calc() kết hợp với flex-wrap.
+   3. Lưu ý: Chiều rộng là calc(25% - 20px) để trừ đi khoảng cách gap. */
+.flex-item {
+  width: calc(25% - 20px);
+  height: 50px;
+  background-color: green;
+  color: white;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 4px;
+}

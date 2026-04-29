@@ -1,15 +1,26 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="vi">
+<!-- <head>: ヘッダー(へっだー) (Thông tin tiêu đề và cấu hình trang) -->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Button Click Color Change</title>
     <link rel="stylesheet" href="s5_btvn3.css" />
   </head>
+  <!-- <body>: ボディ(ぼでぃ) (Thân trang web chứa nội dung nút bấm)
+       1. Chức năng: Chứa phần tử tương tác chính của bài tập.
+       2. Lý do: Là container cấp cao nhất để hiển thị giao diện.
+       3. Lưu ý: Chứa cả script để xử lý logic click. -->
   <body>
-    <!-- <main>: メイン(めいん) (Nội dung chính của trang) -->
+    <!-- <main>: メイン(めいん) (Nội dung chính của trang)
+         1. Chức năng: Bao bọc thành phần chính là nút bấm đổi màu.
+         2. Lý do: Giúp cấu trúc trang chuẩn SEO và dễ quản lý.
+         3. Lưu ý: Chỉ nên có một thẻ main duy nhất. -->
     <main>
-      <!-- <button>: ボタン(ぼたん) (Nút bấm Click me) -->
+      <!-- <button>: ボタン(ぼたん) (Nút bấm đổi màu khi click)
+           1. Chức năng: Nút bấm thực hiện đổi màu thông qua JavaScript.
+           2. Lý do: Để thực hành xử lý sự kiện click và thay đổi class CSS.
+           3. Lưu ý: id="colorButton" được dùng để truy xuất trong script. -->
       <button id="colorButton" type="button">Click me</button>
     </main>
 
@@ -23,6 +34,7 @@
       });
     </script>
       <div style="margin-top: 30px; padding-top: 10px; border-top: 1px solid #ccc;">
+      <!-- <a>: アンカー(あんかー) (Nút quay lại trang Dashboard) -->
       <a class="back-dashboard" href="../index.html" style="display:inline-block;padding:10px 16px;background:#d32f2f;color:#fff;border-radius:6px;text-decoration:none;font-weight:600;">← Quay lại Dashboard</a>
     </div>
   </body>

@@ -1,13 +1,26 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="vi">
+<!-- <head>: ヘッダー(へっだー) (Thông tin tiêu đề và cấu hình trang) -->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>S5 BTVN6 Effects</title>
-    <link rel="stylesheet" href="s5_btvn6.css" />
+    <link rel="stylesheet" href="s5_btvn5.css" />
   </head>
+  <!-- <body>: ボディ(ぼでぃ) (Thân trang web chứa các hiệu ứng hover)
+       1. Chức năng: Chứa các thẻ demo card để minh họa hiệu ứng CSS.
+       2. Lý do: Là container gốc cho toàn bộ giao diện bài tập.
+       3. Lưu ý: Sử dụng font-family "Segoe UI" cho đồng bộ. -->
   <body>
+    <!-- <main>: メイン(めいん) (Vùng hiển thị lưới các demo card)
+         1. Chức năng: Tổ chức các khối card theo dạng lưới (grid).
+         2. Lý do: Giúp giao diện hiển thị ngăn nắp và responsive.
+         3. Lưu ý: Sử dụng CSS Grid cho bố cục này. -->
     <main class="demo-shell">
+      <!-- <div>: コンテナ要素(こんてなようそ) (Khối demo hiệu ứng xoay)
+           1. Chức năng: Hiển thị khối xoay nhẹ khi di chuột.
+           2. Lý do: Minh họa hiệu ứng transform rotate.
+           3. Lưu ý: Class "rotate-hover" điều khiển animation này. -->
       <div class="demo-card rotate-hover">
         <span>Rotate</span>
       </div>
@@ -31,6 +44,7 @@
       </div>
     </main>
       <div style="margin-top: 30px; padding-top: 10px; border-top: 1px solid #ccc;">
+      <!-- <a>: アンカー(あんかー) (Nút quay lại trang Dashboard) -->
       <a class="back-dashboard" href="../index.html" style="display:inline-block;padding:10px 16px;background:#d32f2f;color:#fff;border-radius:6px;text-decoration:none;font-weight:600;">← Quay lại Dashboard</a>
     </div>
   </body>

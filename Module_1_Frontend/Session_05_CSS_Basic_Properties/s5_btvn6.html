@@ -1,13 +1,26 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="vi">
+<!-- <head>: ヘッダー(へっだー) (Thông tin tiêu đề và cấu hình trang) -->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>S5 BTVN6 Cards</title>
     <link rel="stylesheet" href="s5_btvn6.css" />
   </head>
+  <!-- <body>: ボディ(ぼでぃ) (Thân trang web chứa các thẻ tin tức và media)
+       1. Chức năng: Chứa toàn bộ nội dung hiển thị của các thẻ card phức tạp.
+       2. Lý do: Là container gốc cho toàn bộ giao diện bài tập vị trí và animation.
+       3. Lưu ý: Sử dụng font-family "Inter" để có giao diện hiện đại. -->
   <body>
+    <!-- <main>: メイン(めいん) (Vùng hiển thị lưới các thẻ card)
+         1. Chức năng: Tổ chức các bài viết (article) theo dạng lưới (grid).
+         2. Lý do: Giúp giao diện hiển thị linh hoạt trên nhiều thiết bị.
+         3. Lưu ý: Class "card-grid" dùng CSS Grid để phân bổ cột. -->
     <main class="card-grid">
+      <!-- <article>: 記事(きじ) (Thẻ tin tức nổi bật - Hero Card)
+           1. Chức năng: Hiển thị bài viết chính với hình ảnh nền lớn và tiêu đề.
+           2. Lý do: Sử dụng thẻ semantic article để đại diện cho nội dung độc lập.
+           3. Lưu ý: Sử dụng CSS variables (--bg-image) để truyền hình ảnh nền. -->
       <article
         class="hero-card news-card"
         style="
@@ -61,6 +74,7 @@
       </article>
     </main>
       <div style="margin-top: 30px; padding-top: 10px; border-top: 1px solid #ccc;">
+      <!-- <a>: アンカー(あんかー) (Nút quay lại trang Dashboard) -->
       <a class="back-dashboard" href="../index.html" style="display:inline-block;padding:10px 16px;background:#d32f2f;color:#fff;border-radius:6px;text-decoration:none;font-weight:600;">← Quay lại Dashboard</a>
     </div>
   </body>

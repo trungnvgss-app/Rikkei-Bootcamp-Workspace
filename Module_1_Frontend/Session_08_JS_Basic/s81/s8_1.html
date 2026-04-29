@@ -1,18 +1,28 @@
 <!doctype html>
 <html lang="en">
+<!-- <head>: ヘッダー(へっだー) (Thông tin tiêu đề và cấu hình trang) -->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="s8_1.css" />
   </head>
+  <!-- <body>: ボディ(ぼでぃ) (Thân trang web chứa nội dung Flexbox cơ bản)
+       1. Chức năng: Chứa các khối item để thực hành thuộc tính flex-grow.
+       2. Lý do: Là container gốc cho bài tập layout linh hoạt.
+       3. Lưu ý: Mọi thành phần hiển thị đều nằm trong thẻ này. -->
   <body>
+    <!-- <div>: コンテナ要素(こんてなようそ) (Khung chứa Flexbox)
+         1. Chức năng: Sắp xếp các item con theo hàng ngang.
+         2. Lý do: Minh họa cách các phần tử con chiếm dụng không gian.
+         3. Lưu ý: Có class "flex-container" để định dạng trong CSS. -->
     <div class="flex-container">
       <div class="flex-item">Item 1</div>
       <div class="flex-item">Item 2</div>
       <div class="flex-item large">Item 3</div>
     </div>
       <div style="margin-top: 30px; padding-top: 10px; border-top: 1px solid #ccc;">
+      <!-- <a>: アンカー(あんかー) (Nút quay lại trang Dashboard) -->
       <a class="back-dashboard" href="../../index.html" style="display:inline-block;padding:10px 16px;background:#d32f2f;color:#fff;border-radius:6px;text-decoration:none;font-weight:600;">← Quay lại Dashboard</a>
     </div>
   </body>
