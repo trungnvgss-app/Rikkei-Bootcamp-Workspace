@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="script.js"></script>
+    <pre>
+        Apply parseFloat(string) Trong đó: string: Là chuỗi mà bạn muốn chuyển
+        đổi thành số thực. Ví dụ về cách sử dụng: Chuyển đổi một chuỗi sang số
+        thực: Javascript Apply let num = parseFloat("3.14"); console.log(num);
+        // Output: 3.14 Bỏ qua các ký tự không liên quan: Javascript Apply let
+        num = parseFloat("3.14abc"); console.log(num); // Output: 3.14 Chuyển
+        đổi chuỗi không bắt đầu bằng số: Javascript Apply let num =
+        parseFloat("abc3.14"); console.log(num); // Output: NaN (Not-a-Number)
+        Chuyển đổi chuỗi trống: Javascript Apply let num = parseFloat("");
+        console.log(num); // Output: NaN Chuyển đổi chuỗi chứa chỉ số bát phân
+        hoặc thập phân: Javascript Apply let num1 = parseFloat("0xA"); // Chuyển
+        đổi từ hệ thống số bát phân sang thập phân console.log(num1); // Output:
+        10 let num2 = parseFloat(".1"); // Chuyển đổi từ hệ thống số thập phân
+        console.log(num2); // Output: 0.1 Chuyển đổi chuỗi chứa chỉ số bát phân
+        hoặc thập phân có dấu âm: Javascript Apply let num3 =
+        parseFloat("-0X4"); console.log(num3); // Output: -4 let num4 =
+        parseFloat("-0b1010"); console.log(num4); // Output: -10 (trong hệ thống
+        số nhị phân) Lưu ý: parseFloat chỉ chuyển đổi chuỗi sang số thực. Nếu
+        chuỗi không bắt đầu bằng một số hoặc một dấu trừ, nó sẽ trả về NaN. Kết
+        quả của parseFloat luôn là một con số IEEE 754. Hàm parseFloat rất hữu
+        ích khi bạn cần chuyển đổi một chuỗi có thể chứa số thực thành kiểu dữ
+        liệu số thực trong JavaScript.
+    </pre>
+  </body>
+</html>
