@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Tập JavaScript - Phần 2</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 20px auto; 
+            max-width: 700px;
+            line-height: 1.6; 
+            background-color: #f4f4f9;
+        }
+        h2 { text-align: center; color: #333; }
+        .exercise { 
+            margin-bottom: 15px; 
+            padding: 15px; 
+            background-color: #fff;
+            border: 1px solid #ddd; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .exercise h3 { margin-top: 0; color: #0056b3; font-size: 16px; margin-bottom: 10px;}
+        input { 
+            margin: 5px 5px 5px 0; 
+            padding: 8px; 
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: calc(48% - 15px);
+        }
+        input.full { width: calc(100% - 20px); }
+        input.third { width: calc(32% - 15px); }
+        button { 
+            display: block;
+            width: 100%;
+            padding: 12px; 
+            background-color: #28a745; 
+            color: white; 
+            border: none; 
+            border-radius: 5px; 
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer; 
+            margin-top: 20px;
+        }
+        button:hover { background-color: #218838; }
+        #result { 
+            margin-top: 20px; 
+            padding: 20px; 
+            background-color: #fff; 
+            border-left: 5px solid #007bff; 
+            border-radius: 4px;
+            white-space: pre-line; 
+            font-weight: bold;
+            color: #333;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Chương Trình Giải 8 Bài Tập</h2>
+
+    <div class="exercise">
+        <h3>Bài 1: Chuyển từ độ C sang độ F</h3>
+        <input type="number" id="c1" class="full" placeholder="Nhập nhiệt độ (độ C)">
+    </div>
+
+    <div class="exercise">
+        <h3>Bài 2: Chuyển từ mét sang feet</h3>
+        <input type="number" id="m2" class="full" placeholder="Nhập chiều dài (mét)">
+    </div>
+
+    <div class="exercise">
+        <h3>Bài 3: Tính diện tích hình vuông</h3>
+        <input type="number" id="a3" class="full" placeholder="Nhập cạnh a">
+    </div>
+
+    <div class="exercise">
+        <h3>Bài 4: Tính diện tích hình chữ nhật</h3>
+        <input type="number" id="a4" placeholder="Nhập cạnh a">
+        <input type="number" id="b4" placeholder="Nhập cạnh b">
+    </div>
+
+    <div class="exercise">
+        <h3>Bài 5: Tính diện tích tam giác vuông</h3>
+        <input type="number" id="a5" placeholder="Nhập cạnh kề a">
+        <input type="number" id="b5" placeholder="Nhập cạnh kề b">
+    </div>
+
+    <div class="exercise">
+        <h3>Bài 6: Giải phương trình bậc 1 (ax + b = 0)</h3>
+        <input type="number" id="a6" placeholder="Nhập a">
+        <input type="number" id="b6" placeholder="Nhập b">
+    </div>
+
+    <div class="exercise">
+        <h3>Bài 7: Giải phương trình bậc 2 (ax² + bx + c = 0)</h3>
+        <input type="number" id="a7" class="third" placeholder="Nhập a">
+        <input type="number" id="b7" class="third" placeholder="Nhập b">
+        <input type="number" id="c7" class="third" placeholder="Nhập c">
+    </div>
+
+    <div class="exercise">
+        <h3>Bài 8: Kiểm tra tuổi người (0 < tuổi < 120)</h3>
+        <input type="number" id="age8" class="full" placeholder="Nhập số nguyên để kiểm tra">
+    </div>
+
+    <button onclick="calculateAll()">Xem Kết Quả Đồng Loạt</button>
+
+    < id="result">Vui lòng nhập dữ liệu và ấn nút để xem kết quả!</  div>
+
+    <!-- Kết nối file JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

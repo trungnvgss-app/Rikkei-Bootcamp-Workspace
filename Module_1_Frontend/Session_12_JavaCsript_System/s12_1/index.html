@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Tập JavaScript</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 20px auto; 
+            max-width: 600px;
+            line-height: 1.6; 
+            background-color: #f4f4f9;
+        }
+        h2 { text-align: center; color: #333; }
+        .exercise { 
+            margin-bottom: 15px; 
+            padding: 15px; 
+            background-color: #fff;
+            border: 1px solid #ddd; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .exercise h3 { margin-top: 0; color: #0056b3; font-size: 16px; }
+        input { 
+            margin: 5px 5px 5px 0; 
+            padding: 8px; 
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: calc(33% - 15px);
+        }
+        input.full { width: calc(100% - 20px); }
+        button { 
+            display: block;
+            width: 100%;
+            padding: 12px; 
+            background-color: #28a745; 
+            color: white; 
+            border: none; 
+            border-radius: 5px; 
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer; 
+            margin-top: 20px;
+        }
+        button:hover { background-color: #218838; }
+        #result { 
+            margin-top: 20px; 
+            padding: 20px; 
+            background-color: #fff; 
+            border-left: 5px solid #007bff; 
+            border-radius: 4px;
+            white-space: pre-line; 
+            font-weight: bold;
+            color: #333;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Chương Trình Giải Bài Tập</h2>
+
+    <div class="exercise">
+        <h3>Bài 1:Bài 1: Nhập vào hai số a và b, và kiểm tra xem a có chia hết cho b hay không và hiển thị ra thông báo bằng console hoặc alert.</h3>
+        <input type="number" id="a1" placeholder="Nhập số a">
+        <input type="number" id="b1" placeholder="Nhập số b">
+    </div>
+
+    <div class="exercise">
+        <h3>Bài 2: Nhập tuổi và in ra kết quả nếu tuổi học sinh đó không đủ điều kiện vào học lớp 10 và hiển thị ra thông báo bằng console hoặc alert.  </h3>
+        <input type="number" id="age2" class="full" placeholder="Nhập tuổi học sinh">
+    </div>
+
+    <div class="exercise">
+        <h3>Bài 3: Nhập một số nguyên bất kỳ và in kết quả ra màn hình để nói cho người dùng biết số đó là lớn hay nhỏ hơn 0. </h3>
+        <input type="number" id="num3" class="full" placeholder="Nhập số nguyên bất kỳ">
+    </div>
+
+    <div class="exercise">
+        <h3>Bài 4: Nhập 3 số và tìm giá trị lớn nhất trong 3 số đó.</h3>
+        <input type="number" id="x4" placeholder="Số thứ 1">
+        <input type="number" id="y4" placeholder="Số thứ 2">
+        <input type="number" id="z4" placeholder="Số thứ 3">
+    </div>
+
+    <div class="exercise">
+        <h3>Bài 5: Xếp hạng học lực của học sinh dựa trên các điểm bài kiểm tra, điểm thi giữa kỳ, điểm thi cuối kỳ (Xuất Sắc, Giỏi, Khá, Trung Bình, Yếu)</h3>
+        <input type="number" id="test5" placeholder="Điểm kiểm tra">
+        <input type="number" id="mid5" placeholder="Điểm giữa kỳ">
+        <input type="number" id="final5" placeholder="Điểm cuối kỳ">
+    </div>
+
+    <button onclick="calculateAll()">Xem Kết Quả Đồng Loạt</button>
+
+    <div id="result">Vui lòng nhập dữ liệu và ấn nút để xem kết quả!</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
