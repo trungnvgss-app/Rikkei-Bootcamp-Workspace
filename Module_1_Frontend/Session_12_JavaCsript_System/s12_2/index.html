@@ -29,8 +29,8 @@
             border-radius: 4px;
             width: calc(48% - 15px);
         }
-        input.full { width: calc(100% - 20px); }
-        input.third { width: calc(32% - 15px); }
+        input.full { width: calc(100% - 20px); } /* Dành cho bài tập chỉ có một input */
+        input.third { width: calc(32% - 15px); } /* Dành cho bài tập có ba input */
         button { 
             display: block;
             width: 100%;
@@ -44,8 +44,8 @@
             cursor: pointer; 
             margin-top: 20px;
         }
-        button:hover { background-color: #218838; }
-        #result { 
+        button:hover { background-color: #218838; } /* Hiệu ứng hover cho nút */
+        #result { /* Kết quả sẽ hiển thị ở đây */
             margin-top: 20px; 
             padding: 20px; 
             background-color: #fff; 
@@ -54,7 +54,7 @@
             white-space: pre-line; 
             font-weight: bold;
             color: #333;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Thêm hiệu ứng bóng cho kết quả */
             font-size: 15px;
         }
     </style>
@@ -110,9 +110,12 @@
 
     <button onclick="calculateAll()">Xem Kết Quả Đồng Loạt</button>
 
-    < id="result">Vui lòng nhập dữ liệu và ấn nút để xem kết quả!</  div>
+    <div id="result">Vui lòng nhập dữ liệu và ấn nút để xem kết quả!</div>
 
     <!-- Kết nối file JavaScript -->
     <script src="script.js"></script>
-</body>
+    <div style="margin-top: 30px; padding-top: 10px; border-top: 1px solid #ccc;"> /* Phần này để chứa nút quay lại Dashboard */
+      <a class="back-dashboard" href="../../index.html" style="display:inline-block;padding:10px 16px;background:#d32f2f;color:#fff;border-radius:6px;text-decoration:none;font-weight:600;">← Quay lại Dashboard</a>
+    </div>
+  </body>
 </html>

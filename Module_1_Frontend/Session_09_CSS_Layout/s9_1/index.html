@@ -1,33 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Clubweb - Customized Website for Your Business</title>
+    <!-- Font Inter từ Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <!-- Ví dụ cho phần Featured Developers -->
-<section class="services-section">
-  <h2>Let us build a website with your ideas</h2>
-  
-  <div class="services-container">
-    
-    <div class="card card-orange">
-      <h3>E-commerce website</h3>
-      <p>Engage a developer to create a customized e-commerce site...</p>
-    </div>  
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container header__container">
+            <div class="header__brand">
+                <img src="./s9_dataset_1/logo_clubweb_1.png" alt="Clubweb Logo" class="header__logo-img">
+            </div>
 
-    <div class="card card-purple">
-      <h3>Portfolio website</h3>
-      <p>A portfolio website is a profile website...</p>
+            <nav class="header__nav">
+                <ul class="header__menu">
+                    <li><a href="#" class="header__link">Features</a></li>
+                    <li><a href="#" class="header__link">Pricing</a></li>
+                    <li><a href="#" class="header__link">Learn</a></li>
+                </ul>
+                <button class="btn btn--outline">Join Clubwebers</button>
+            </nav> 
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero__container">
+                <div class="hero__content">
+                    <h1 class="hero__title">Get a customized <span class="highlight">website</span> for your business and brand.</h1>
+                    <p class="hero__desc">Our website service helps you to create your marketing website and portfolio
+                        home.</p>
+                    <button class="btn btn--primary">Get started</button>
+                    <button class="btn btn--outline">Get Featured</button>
+                </div>
+                <div class="hero__image-wrapper">
+                    <!-- [THAY ẢNH TẠI ĐÂY] Xuất ảnh Laptop/Hero từ Figma và cập nhật src -->
+                    <!-- Ảnh tạm thời (Placeholder) -->
+                    <img src="./s9_dataset_1/taplate.png"
+                        alt="Laptop Preview" class="hero__image">
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services">
+            <div class="container services__container">
+                <h2 class="section-title services__title">Let us build a website with your ideas.</h2>
+                <p class="section-subtitle">Get website developers to create your marketing website and portfolio faster.</p>
+                <div class="services__grid">
+                    <!-- Thẻ 1: Build your brand -->
+                    <div class="service-card service-card--yellow">
+                        <!-- [THAY ẢNH TẠI ĐÂY] Thay thẻ div bên dưới bằng thẻ <img src="icon-1.png"> từ Figma -->
+                        <img src="./s9_dataset_1/Filled_/Group_168.png" alt="Build your brand Icon" class="service-card__icon">
+                        <h3 class="service-card__title">Build your brand</h3>
+                    </div>
+
+                    <!-- Thẻ 2: Fast delivery -->
+                    <div class="service-card service-card--purple">
+                        <!-- [THAY ẢNH TẠI ĐÂY] Thay thẻ div bên dưới bằng thẻ <img src="icon-2.png"> từ Figma -->
+                        <img src="./s9_dataset_1/Filled_/Group_1.png" alt="Fast delivery Icon" class="service-card__icon">
+                        <h3 class="service-card__title">Fast delivery</h3>
+                    </div>
+
+                    <!-- Thẻ 3: Marketing website -->
+                    <div class="service-card service-card--blue">
+                        <!-- [THAY ẢNH TẠI ĐÂY] Thay thẻ div bên dưới bằng thẻ <img src="icon-3.png"> từ Figma -->
+                        <img src="./s9_dataset_1/Filled_/Group_46.png" alt="Marketing website Icon" class="service-card__icon">
+                        <h3 class="service-card__title">Marketing website</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Developers Section -->
+        <section class="developers">
+            <div class="container developers__container">
+                <h2 class="section-title">Featured Developers</h2>
+                <p class="section-subtitle">We have featured developers for your next projects.</p>
+
+                <div class="developers__grid">
+                    <!-- Developer 1 -->
+                    <div class="dev-card">
+                        <!-- [THAY ẢNH TẠI ĐÂY] Export hình Avatar từ Figma (Agbama) và sửa link -->
+                        <img src="https://via.placeholder.com/150/555555/FFFFFF?text=Avatar" alt="Agbama Ulimhuka"
+                            class="dev-card__avatar">
+                        <h4 class="dev-card__name">Agbama Ulimhuka</h4>
+                        <span class="dev-card__role">Webflow developer</span>
+                    </div>
+
+                    <!-- Developer 2 -->
+                    <div class="dev-card">
+                        <!-- [THAY ẢNH TẠI ĐÂY] Export hình Avatar từ Figma (Surita) và sửa link -->
+                        <img src="https://via.placeholder.com/150/555555/FFFFFF?text=Avatar" alt="Surita Patnam"
+                            class="dev-card__avatar">
+                        <h4 class="dev-card__name">Surita Patnam</h4>
+                        <span class="dev-card__role">Bubble developer</span>
+                    </div>
+
+                    <!-- Developer 3 -->
+                    <div class="dev-card">
+                        <!-- [THAY ẢNH TẠI ĐÂY] Export hình Avatar từ Figma (Richard) và sửa link -->
+                        <img src="https://via.placeholder.com/150/555555/FFFFFF?text=Avatar" alt="Richard Bomaventure"
+                            class="dev-card__avatar">
+                        <h4 class="dev-card__name">Richard Bomaventure</h4>
+                        <span class="dev-card__role">React.js developer</span>
+                    </div>
+
+                    <!-- Developer 4 -->
+                    <div class="dev-card">
+                        <!-- [THAY ẢNH TẠI ĐÂY] Export hình Avatar từ Figma (Samuel) và sửa link -->
+                        <img src="https://via.placeholder.com/150/555555/FFFFFF?text=Avatar" alt="Samuel Oghenakaro"
+                            class="dev-card__avatar">
+                        <h4 class="dev-card__name">Samuel Oghenakaro</h4>
+                        <span class="dev-card__role">Webflow developer</span>
+                    </div>
+                </div>
+
+                <div class="developers__action">
+                    <button class="btn btn--outline">Get featured</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials">
+            <div class="container testimonials__container">
+                <h2 class="section-title">Message from users</h2>
+                <p class="section-subtitle">Read what they say about clubweb, our users have the best stories to tell.
+                </p>
+
+                <div class="testimonials__grid">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card">
+                        <p class="testimonial-card__quote">"The service is top-notch, highly recommended for any
+                            business."</p>
+                        <h5 class="testimonial-card__author">Richard Bomaventure</h5>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card">
+                        <p class="testimonial-card__quote">"I love the way they handle projects, very professional and
+                            fast."</p>
+                        <h5 class="testimonial-card__author">Elliana James</h5>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card">
+                        <p class="testimonial-card__quote">"Clubweb helped me launch my portfolio in days. Amazing
+                            team!"</p>
+                        <h5 class="testimonial-card__author">Stella</h5>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Banner Section -->
+        <section class="cta-banner">
+            <!-- [THAY ẢNH TẠI ĐÂY] Nếu Banner có background image, hãy tải ảnh về và chèn vào CSS lớp .cta-banner -->
+            <div class="container cta-banner__container">
+                <h2 class="cta-banner__title">Enjoy Life. Your website is ready.</h2>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container footer__container">
+            <h2 class="footer__title">Do you want to be a clubwebber?</h2>
+            <p class="footer__desc">Be part of an amazing community of website developers.</p>
+            <button class="btn btn--primary">Join now</button>
+        </div>
+    </footer>
+    <div style="margin-top: 30px; padding-top: 10px; border-top: 1px solid #ccc;">
+        <a class="back-dashboard" href="../../index.html"
+            style="display:inline-block;padding:10px 16px;background:#d32f2f;color:#fff;border-radius:6px;text-decoration:none;font-weight:600;">←
+            Quay lại Dashboard</a>
     </div>
-
-    <div class="card card-blue">
-      <h3>Marketing website</h3>
-      <p>This is a website created with a lot of marketing advantage...</p>
-    </div>
-
-  </div>
-</section>
 </body>
+
 </html>

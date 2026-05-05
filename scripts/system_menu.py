@@ -25,7 +25,7 @@ def get_module_dirs():
 def scan_html_files(module_dir):
     files = []
     for path in module_dir.rglob('*.html'):
-        if path.name.lower() == 'index.html':
+        if path.name.lower() == 'index.html' and path.parent == module_dir:
             continue
         if any(part in IGNORE_DIRS for part in path.parts):
             continue
@@ -51,7 +51,10 @@ def label_group_name(group):
 # 1. Chức năng: Xóa đuôi .html và thay thế dấu gạch dưới/gạch ngang thành khoảng trắng.
 # 2. Lý do: Định dạng tên file thành tên bài tập dễ đọc trên giao diện.
 # 3. Lưu ý: Sử dụng title case cho từng từ.
-def label_file_name(name):
+def label_file_name(rel_path):
+    name = rel_path.name
+    if name.lower() == 'index.html' and rel_path.parent.name:
+        name = rel_path.parent.name
     label = name.replace('_', ' ').replace('-', ' ').replace('.html', '')
     return ' '.join(word.capitalize() for word in label.split())
 
@@ -84,21 +87,66 @@ def build_module_index(module_dir):
         '  <meta charset="UTF-8" />',
         '  <meta name="viewport" content="width=device-width, initial-scale=1.0" />',
         f'  <title>{title}</title>',
+        '  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">',
         '  <style>',
-        '    body { font-family: Arial, sans-serif; background-color: #f4f7f6; padding: 20px; }',
-        '    .container { max-width: 900px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }',
-        '    h1 { text-align: center; color: #d32f2f; }',
-        '    .session { margin-bottom: 24px; border-left: 4px solid #d32f2f; padding-left: 12px; }',
-        '    .session h2 { font-size: 18px; color: #333; margin-bottom: 8px; }',
+        '    :root {',
+        '      --bg-main: #121212;',
+        '      --bg-card: #1f1f1f;',
+        '      --text-main: #e0e0e0;',
+        '      --text-muted: #aaaaaa;',
+        '      --accent: #ff5252;',
+        '      --link: #64b5f6;',
+        '      --badge-bg: #333333;',
+        '      --badge-text: #cccccc;',
+        '      --shadow: rgba(0,0,0,0.5);',
+        '      --border: #333333;',
+        '    }',
+        '    :root.light-mode {',
+        '      --bg-main: #f4f7f6;',
+        '      --bg-card: #ffffff;',
+        '      --text-main: #333333;',
+        '      --text-muted: #555555;',
+        '      --accent: #d32f2f;',
+        '      --link: #0066cc;',
+        '      --badge-bg: #eeeeee;',
+        '      --badge-text: #555555;',
+        '      --shadow: rgba(0,0,0,0.1);',
+        '      --border: #dddddd;',
+        '    }',
+        '    body { font-family: "Inter", sans-serif; background-color: var(--bg-main); color: var(--text-main); padding: 20px; transition: background-color 0.3s, color 0.3s; margin: 0; }',
+        '    .container { max-width: 900px; margin: 20px auto; background: var(--bg-card); padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px var(--shadow); transition: background-color 0.3s; position: relative; }',
+        '    h1 { text-align: center; color: var(--accent); margin-top: 0; }',
+        '    .session { margin-bottom: 24px; border-left: 4px solid var(--accent); padding-left: 15px; }',
+        '    .session h2 { font-size: 1.2rem; color: var(--text-main); margin-bottom: 10px; }',
         '    ul { list-style-type: none; padding: 0; }',
-        '    li { margin: 8px 0; }',
-        '    a { text-decoration: none; color: #0066cc; font-weight: bold; }',
-        '    a:hover { color: #d32f2f; text-decoration: underline; }',
-        '    .badge { background: #eee; padding: 3px 8px; border-radius: 12px; font-size: 12px; color: #555; }',
+        '    li { margin: 10px 0; display: flex; align-items: center; flex-wrap: wrap; gap: 10px; }',
+        '    a.exercise-link { text-decoration: none; color: var(--link); font-weight: 600; font-size: 1.05rem; }',
+        '    a.exercise-link:hover { color: var(--accent); text-decoration: underline; }',
+        '    .badge { background: var(--badge-bg); padding: 4px 10px; border-radius: 12px; font-size: 0.8rem; color: var(--badge-text); border: 1px solid var(--border); }',
+        '    .top-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; flex-wrap: wrap; gap: 15px; }',
+        '    .back-btn { display: inline-block; padding: 10px 20px; background: var(--accent); color: #fff !important; text-decoration: none; border-radius: 8px; font-weight: 600; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 6px var(--shadow); }',
+        '    .back-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 12px var(--shadow); }',
+        '    /* 3D Toggle Switch */',
+        '    .theme-switch-wrapper { display: flex; align-items: center; gap: 10px; font-weight: 600; color: var(--text-muted); }',
+        '    .theme-switch { display: inline-block; height: 34px; position: relative; width: 64px; }',
+        '    .theme-switch input { display: none; }',
+        '    .slider { background-color: #2c3e50; bottom: 0; cursor: pointer; left: 0; position: absolute; right: 0; top: 0; transition: .4s; border-radius: 34px; box-shadow: inset 0 2px 5px rgba(0,0,0,0.5), 0 1px 1px rgba(255,255,255,0.1); }',
+        '    .slider:before { background-color: #1a1a1a; bottom: 4px; content: "🌙"; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 14px; height: 26px; left: 4px; position: absolute; transition: .4s; width: 26px; border-radius: 50%; box-shadow: 0 2px 5px rgba(0,0,0,0.3); transform: translateX(30px); }',
+        '    input:checked + .slider { background-color: #ddd; box-shadow: inset 0 2px 5px rgba(0,0,0,0.2), 0 2px 2px rgba(255,255,255,0.7); }',
+        '    input:checked + .slider:before { transform: translateX(0); background-color: #fff; content: "☀️"; color: #333; }',
         '  </style>',
         '</head>',
         '<body>',
         '  <div class="container">',
+        '    <div class="top-bar">',
+        '      <a href="../index.html" class="back-btn">← Quay lại System Center</a>',
+        '      <div class="theme-switch-wrapper">',
+        '        <label class="theme-switch" for="checkbox">',
+        '          <input type="checkbox" id="checkbox" />',
+        '          <div class="slider"></div>',
+        '        </label>',
+        '      </div>',
+        '    </div>',
         f'    <h1>{header}</h1>',
     ]
 
@@ -121,11 +169,38 @@ def build_module_index(module_dir):
             ]
             for rel in rel_paths:
                 href = rel.as_posix()
-                name = label_file_name(rel.name)
-                lines.append(f'        <li><a href="{href}">{name}</a> <span class="badge">{label}</span></li>')
+                name = label_file_name(rel)
+                lines.append(f'        <li><a class="exercise-link" href="{href}">{name}</a> <span class="badge">{label}</span></li>')
             lines += ['      </ul>', '    </div>']
 
-    lines += ['  </div>', '</body>', '</html>']
+    lines += [
+        '  </div>',
+        '  <script>',
+        '    const toggleSwitch = document.querySelector(`.theme-switch input[type="checkbox"]`);',
+        '    const currentTheme = localStorage.getItem("theme");',
+        '    if (currentTheme) {',
+        '        document.documentElement.classList.add(currentTheme);',
+        '        if (currentTheme === "light-mode") { toggleSwitch.checked = true; }',
+        '    } else {',
+        '        document.documentElement.classList.add("dark-mode");',
+        '        localStorage.setItem("theme", "dark-mode");',
+        '    }',
+        '    function switchTheme(e) {',
+        '        if (e.target.checked) {',
+        '            document.documentElement.classList.add("light-mode");',
+        '            document.documentElement.classList.remove("dark-mode");',
+        '            localStorage.setItem("theme", "light-mode");',
+        '        } else {',
+        '            document.documentElement.classList.add("dark-mode");',
+        '            document.documentElement.classList.remove("light-mode");',
+        '            localStorage.setItem("theme", "dark-mode");',
+        '        }',
+        '    }',
+        '    toggleSwitch.addEventListener("change", switchTheme, false);',
+        '  </script>',
+        '</body>',
+        '</html>'
+    ]
     index_path = module_dir / 'index.html'
     index_path.write_text('\n'.join(lines), encoding='utf-8')
     return index_path
@@ -139,7 +214,7 @@ def add_back_buttons():
     updated = []
     for module_dir in get_module_dirs():
         for path in module_dir.rglob('*.html'):
-            if path.name.lower() == 'index.html':
+            if path.name.lower() == 'index.html' and path.parent == module_dir:
                 continue
             if any(part in IGNORE_DIRS for part in path.parts):
                 continue
@@ -216,28 +291,62 @@ def build_root_index(module_dirs):
         '      --text-muted: #858585;',
         '      --border: #333;',
         '      --card-bg: #1f1f1f;',
+        '      --header-bg: #000;',
+        '      --bb-bg: #1a1a1a;',
+        '      --bb-border: #3e2723;',
+        '      --bb-text: #d4d4d4;',
+        '      --cmd-bg: #000;',
         '    }',
-        '    body { font-family: "Inter", sans-serif; background-color: var(--bg-dark); color: var(--text-main); margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }',
-        '    header { width: 100%; background: #000; padding: 30px 0; text-align: center; border-bottom: 2px solid var(--accent); box-shadow: 0 4px 20px rgba(74, 246, 38, 0.15); }',
+        '    :root.light-mode {',
+        '      --bg-dark: #f4f7f6;',
+        '      --bg-board: #fff;',
+        '      --accent: #2e7d32;',
+        '      --text-main: #333;',
+        '      --text-muted: #666;',
+        '      --border: #ddd;',
+        '      --card-bg: #fff;',
+        '      --header-bg: #e8f5e9;',
+        '      --bb-bg: #f9f9f9;',
+        '      --bb-border: #8d6e63;',
+        '      --bb-text: #333;',
+        '      --cmd-bg: #eee;',
+        '    }',
+        '    body { font-family: "Inter", sans-serif; background-color: var(--bg-dark); color: var(--text-main); margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; min-height: 100vh; transition: background-color 0.3s, color 0.3s; }',
+        '    header { width: 100%; background: var(--header-bg); padding: 30px 0; text-align: center; border-bottom: 2px solid var(--accent); box-shadow: 0 4px 20px rgba(0,0,0,0.15); position: relative; transition: background-color 0.3s; }',
         '    h1 { margin: 0; font-size: 2.5rem; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; }',
         '    .container { max-width: 1200px; width: 90%; margin: 40px auto; display: grid; grid-template-columns: 1fr 400px; gap: 40px; }',
         '    @media(max-width: 900px) { .container { grid-template-columns: 1fr; } }',
         '    .modules-section { display: flex; flex-direction: column; gap: 20px; }',
-        '    .module-card { background: var(--card-bg); border-left: 5px solid var(--accent); border-radius: 8px; padding: 25px; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 6px rgba(0,0,0,0.3); border-top: 1px solid var(--border); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }',
-        '    .module-card:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(0,0,0,0.5); }',
-        '    .module-card h2 { margin-top: 0; margin-bottom: 10px; color: #fff; font-size: 1.5rem; }',
+        '    .module-card { background: var(--card-bg); border-left: 5px solid var(--accent); border-radius: 8px; padding: 25px; transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-top: 1px solid var(--border); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }',
+        '    .module-card:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }',
+        '    .module-card h2 { margin-top: 0; margin-bottom: 10px; color: var(--text-main); font-size: 1.5rem; }',
         '    .module-card a { display: inline-block; margin-top: 15px; padding: 10px 20px; background: rgba(74,246,38,0.1); border: 1px solid var(--accent); color: var(--accent); text-decoration: none; border-radius: 6px; font-weight: 600; transition: all 0.2s; }',
-        '    .module-card a:hover { background: var(--accent); color: #000; box-shadow: 0 0 15px rgba(74,246,38,0.4); }',
-        '    .blackboard { background: #1a1a1a; border: 12px solid #3e2723; border-radius: 8px; padding: 25px; font-family: "Fira Code", monospace; box-shadow: inset 0 0 20px rgba(0,0,0,0.8), 0 10px 20px rgba(0,0,0,0.5); position: relative; height: fit-content; }',
-        '    .blackboard::after { content: ""; position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); width: 80%; height: 10px; background: #5d4037; border-radius: 0 0 8px 8px; }',
-        '    .blackboard h3 { color: #f8b195; border-bottom: 1px dashed #555; padding-bottom: 10px; margin-top: 0; font-size: 1.3rem; text-align: center; }',
-        '    .instruction-step { margin-bottom: 20px; font-size: 0.95rem; line-height: 1.6; color: #d4d4d4; }',
+        '    .module-card a:hover { background: var(--accent); color: #fff; box-shadow: 0 0 15px rgba(0,0,0,0.2); }',
+        '    .blackboard { background: var(--bb-bg); border: 12px solid var(--bb-border); border-radius: 8px; padding: 25px; font-family: "Fira Code", monospace; box-shadow: inset 0 0 20px rgba(0,0,0,0.1), 0 10px 20px rgba(0,0,0,0.2); position: relative; height: fit-content; transition: background-color 0.3s, border-color 0.3s; }',
+        '    .blackboard::after { content: ""; position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); width: 80%; height: 10px; background: var(--bb-border); border-radius: 0 0 8px 8px; transition: background-color 0.3s; }',
+        '    .blackboard h3 { color: var(--accent); border-bottom: 1px dashed var(--border); padding-bottom: 10px; margin-top: 0; font-size: 1.3rem; text-align: center; }',
+        '    .instruction-step { margin-bottom: 20px; font-size: 0.95rem; line-height: 1.6; color: var(--bb-text); }',
         '    .highlight { color: var(--accent); font-weight: bold; }',
-        '    .cmd-box { background: #000; padding: 10px; border-radius: 6px; color: #f6d365; display: inline-block; margin-top: 8px; border: 1px solid #333; font-size: 0.9rem; }',
+        '    .cmd-box { background: var(--cmd-bg); padding: 10px; border-radius: 6px; color: #f6d365; display: inline-block; margin-top: 8px; border: 1px solid var(--border); font-size: 0.9rem; transition: background-color 0.3s; }',
+        '    /* 3D Toggle Switch */',
+        '    .theme-switch-wrapper { position: absolute; right: 30px; top: 50%; transform: translateY(-50%); display: flex; align-items: center; }',
+        '    .theme-switch { display: inline-block; height: 34px; position: relative; width: 64px; }',
+        '    .theme-switch input { display: none; }',
+        '    .slider { background-color: #2c3e50; bottom: 0; cursor: pointer; left: 0; position: absolute; right: 0; top: 0; transition: .4s; border-radius: 34px; box-shadow: inset 0 2px 5px rgba(0,0,0,0.5), 0 1px 1px rgba(255,255,255,0.1); }',
+        '    .slider:before { background-color: #1a1a1a; bottom: 4px; content: "🌙"; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 14px; height: 26px; left: 4px; position: absolute; transition: .4s; width: 26px; border-radius: 50%; box-shadow: 0 2px 5px rgba(0,0,0,0.3); transform: translateX(30px); }',
+        '    input:checked + .slider { background-color: #ddd; box-shadow: inset 0 2px 5px rgba(0,0,0,0.2), 0 2px 2px rgba(255,255,255,0.7); }',
+        '    input:checked + .slider:before { transform: translateX(0); background-color: #fff; content: "☀️"; color: #333; }',
+        '    @media(max-width: 600px) { .theme-switch-wrapper { top: 15px; right: 15px; transform: none; } header { padding-top: 60px; } }',
         '  </style>',
         '</head>',
         '<body>',
         '  <header>',
+        '    <div class="theme-switch-wrapper">',
+        '      <label class="theme-switch" for="checkbox">',
+        '        <input type="checkbox" id="checkbox" />',
+        '        <div class="slider"></div>',
+        '      </label>',
+        '    </div>',
         '    <h1>Rikkei Bootcamp Workspace</h1>',
         '    <p style="color: var(--text-muted); font-size: 1.1rem; margin-top: 10px;">Central Learning Dashboard</p>',
         '  </header>',
@@ -268,22 +377,45 @@ def build_root_index(module_dirs):
         '        </div>',
         '        <div class="instruction-step">',
         '          2. Chạy tệp lệnh Menu Hệ Thống:<br/>',
-        '          <div class="cmd-box">.\\run_menu.bat</div>',
+        '          <div class="cmd-box">.\run_menu.bat</div>',
         '        </div>',
         '        <div class="instruction-step">',
         '          3. Nhập số tương ứng trên <span class="highlight">Bảng Đen CLI</span>:',
-        '          <ul style="padding-left: 20px; list-style-type: square; color: #a8e6cf; margin-top: 10px;">',
+        '          <ul style="padding-left: 20px; list-style-type: square; color: var(--accent); margin-top: 10px;">',
         '            <li style="margin-bottom: 8px;"><b>Phím 1</b>: Cập nhật dữ liệu bài tập mới vào Dashboard.</li>',
         '            <li style="margin-bottom: 8px;"><b>Phím 2</b>: Thêm nút Quay Lại cho các bài tập.</li>',
         '            <li><b>Phím 3</b>: Đẩy toàn bộ tiến độ lên GitHub.</li>',
         '          </ul>',
         '        </div>',
-        '        <div class="instruction-step" style="color: #ff8b94; font-style: italic; margin-top: 30px; font-size: 0.85rem; border-top: 1px solid #333; padding-top: 15px;">',
+        '        <div class="instruction-step" style="color: #ff8b94; font-style: italic; margin-top: 30px; font-size: 0.85rem; border-top: 1px solid var(--border); padding-top: 15px;">',
         '          *Lưu ý: Không thể chạy trực tiếp từ trình duyệt vì lý do bảo mật. Vui lòng thao tác trên Terminal.*',
         '        </div>',
         '      </div>',
         '    </div>',
         '  </div>',
+        '  <script>',
+        '    const toggleSwitch = document.querySelector(`.theme-switch input[type="checkbox"]`);',
+        '    const currentTheme = localStorage.getItem("theme");',
+        '    if (currentTheme) {',
+        '        document.documentElement.classList.add(currentTheme);',
+        '        if (currentTheme === "light-mode") { toggleSwitch.checked = true; }',
+        '    } else {',
+        '        document.documentElement.classList.add("dark-mode");',
+        '        localStorage.setItem("theme", "dark-mode");',
+        '    }',
+        '    function switchTheme(e) {',
+        '        if (e.target.checked) {',
+        '            document.documentElement.classList.add("light-mode");',
+        '            document.documentElement.classList.remove("dark-mode");',
+        '            localStorage.setItem("theme", "light-mode");',
+        '        } else {',
+        '            document.documentElement.classList.add("dark-mode");',
+        '            document.documentElement.classList.remove("light-mode");',
+        '            localStorage.setItem("theme", "dark-mode");',
+        '        }',
+        '    }',
+        '    toggleSwitch.addEventListener("change", switchTheme, false);',
+        '  </script>',
         '</body>',
         '</html>'
     ])

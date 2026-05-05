@@ -1,39 +1,377 @@
-/* Thiết lập chung */
-.services-section {
-  background-color: #000; /* Nền đen */
-  color: #fff;
-  padding: 20px;
-  text-align: center;
+// Variables
+$bg-color: #000000;
+$card-bg: #1A1A1A;
+$primary-blue: #1E75FF;
+$text-primary: #FFFFFF;
+$text-secondary: #A0A0A0;
+$yellow: #FFD700;
+$purple: #A020F0;
+$font-family: 'Inter', sans-serif;
+
+// Base Styles
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* KHUNG HIỂN THỊ ĐIỆN THOẠI (1 CỘT) */
-.services-container {
-  display: flex;
-  flex-direction: column; /* Xếp theo cột dọc */
-  gap: 20px; /* Khoảng cách giữa các thẻ là 20px */
-  margin-top: 30px;
+body {
+    background-color: $bg-color;
+    color: $text-primary;
+    font-family: $font-family;
+    line-height: 1.6;
 }
 
-.card {
-  padding: 30px;
-  border-radius: 12px;
-  text-align: left;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.card-orange { background-color: #E2852B; }
-.card-purple { background-color: #7B35D0; }
-.card-blue { background-color: #2B62E2; }
+// Typography
+.section-title {
+    font-size: 48px;
+    font-weight: 700;
+    text-align: center;
+}
+.section-subtitle {
+    color: $text-secondary;
+    font-size: 18px;
+    margin-bottom: 40px;
+    text-align: center;
+}
 
-/* KHI MÀN HÌNH LỚN HƠN 768px (MÁY TÍNH / TABLET NGANG) */
-@media screen and (min-width: 768px) {
-  
-  .services-container {
-    flex-direction: row; /* Đổi từ cột dọc sang hàng ngang */
-    justify-content: center; /* Căn giữa 3 thẻ */
-  }
+.highlight {
+    color: $primary-blue;
+}
 
-  .card {
-    flex: 1; /* Chia đều không gian cho cả 3 thẻ */
-    max-width: 350px; /* Khống chế chiều rộng tối đa để không bị quá to */
-  }
+// Components
+.btn {
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+    font-size: 16px;
+
+    &--primary {
+        background-color: $primary-blue;
+        color: $text-primary;
+        &:hover {
+            background-color: lighten($primary-blue, 10%);
+        }
+    }
+
+    &--outline {
+        background: transparent;
+        border: 2px solid $text-secondary;
+        color: $text-primary;
+        &:hover {
+            border-color: $text-primary;
+        }
+    }
+}
+
+// Sections
+.header {
+    padding: 20px 0;
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__brand {
+        display: flex;
+        align-items: center;
+    }
+    &__logo-img {
+        height: 36px;
+        object-fit: contain;
+    }
+    &__nav {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+    }
+    &__menu {
+        display: flex;
+        list-style: none;
+        gap: 30px;
+    }
+    &__link {
+        color: $text-primary;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 16px;
+        transition: color 0.3s ease;
+        &:hover {
+            color: $primary-blue;
+        }
+    }
+}
+
+.hero {
+    padding: 80px 0;
+    text-align: center;
+    ::highlight {
+        color: $primary-blue;
+    }
+
+    &__title {
+        font-size: 64px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        max-width: 900px;
+        margin-inline: auto;
+        line-height: 1.2;
+    }
+
+    &__desc {
+        color: $text-secondary;
+        font-size: 18px;
+        margin-bottom: 40px;
+        max-width: 600px;
+        margin-inline: auto;
+    }
+
+    &__image-wrapper {
+        margin-top: 60px;
+        width: 100%;
+        max-width: 1000px;
+        margin-inline: auto;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    &__image {
+        width: 100%;
+        display: block;
+        border-radius: 20px;
+    }
+}
+
+.services {
+    padding: 80px 0;
+    text-align: center;
+    
+    &__title {
+        margin: 0 auto 20px;
+        max-width: 600px;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+}
+
+.service-card {
+    padding: 40px;
+    border-radius: 20px;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+
+    &__icon-placeholder,
+    &__icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        object-fit: contain;
+    }
+
+    &__title {
+        font-size: 28px;
+        font-weight: 700;
+        max-width: 200px;
+        line-height: 1.3;
+    }
+
+    &--yellow {
+        background-color: $yellow;
+        color: #000000;
+        .service-card__icon-placeholder { color: #000; }
+    }
+
+    &--purple {
+        background-color: $purple;
+        color: $text-primary;
+        .service-card__icon-placeholder { color: $text-primary; }
+    }
+
+    &--blue {
+        background-color: $primary-blue;
+        color: $text-primary;
+        .service-card__icon-placeholder { color: $text-primary; }
+    }
+}
+
+.developers {
+    padding: 100px 0;
+    text-align: center;
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        margin-bottom: 50px;
+    }
+
+    &__action {
+        margin-top: 30px;
+    }
+}
+
+.dev-card {
+    background-color: $card-bg;
+    padding: 40px 20px;
+    border-radius: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: translateY(-10px);
+    }
+
+    &__avatar {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        margin: 0 auto 20px;
+        object-fit: cover;
+    }
+
+    &__name {
+        font-size: 20px;
+        margin-bottom: 8px;
+        font-weight: 600;
+    }
+
+    &__role {
+        color: $text-secondary;
+        font-size: 14px;
+        font-weight: 500;
+    }
+}
+
+.testimonials {
+    padding: 80px 0;
+    text-align: center;
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+}
+
+.testimonial-card {
+    background-color: $card-bg;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: left;
+
+    &__quote {
+        font-size: 18px;
+        line-height: 1.8;
+        margin-bottom: 30px;
+        color: $text-primary;
+    }
+
+    &__author {
+        color: $primary-blue;
+        font-size: 16px;
+        font-weight: 600;
+    }
+}
+
+.cta-banner {
+    padding: 60px 0 100px;
+    
+    &__container {
+        /* [THAY ẢNH TẠI ĐÂY] Nếu cần ảnh nền, đổi màu này thành background-image: url('...'); */
+        background-color: $primary-blue;
+        padding: 80px;
+        text-align: center;
+        border-radius: 24px;
+    }
+
+    &__title {
+        font-size: 56px;
+        font-weight: 700;
+        color: $text-primary;
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.2;
+    }
+}
+
+.footer {
+    padding: 80px 0 120px;
+    text-align: center;
+    background-color: #050505;
+    border-top: 1px solid #1A1A1A;
+
+    &__title {
+        font-size: 56px;
+        margin-bottom: 20px;
+        font-weight: 700;
+    }
+
+    &__desc {
+        color: $text-secondary;
+        font-size: 20px;
+        margin-bottom: 40px;
+    }
+}
+
+// Mobile Responsiveness (Android Large - 2)
+@media (max-width: 768px) {
+    .header__nav {
+        display: none;
+    }
+    .section-title, .hero__title, .cta-banner__title, .footer__title {
+        font-size: 36px;
+    }
+
+    .hero {
+        padding: 40px 0;
+        &__image-wrapper {
+            margin-top: 40px;
+        }
+    }
+
+    .services__grid, .testimonials__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .developers__grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .service-card {
+        height: auto;
+        min-height: 250px;
+    }
+
+    .cta-banner__container {
+        padding: 50px 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .developers__grid {
+        grid-template-columns: 1fr;
+    }
+    .section-title, .hero__title, .cta-banner__title, .footer__title {
+        font-size: 32px;
+    }
 }
