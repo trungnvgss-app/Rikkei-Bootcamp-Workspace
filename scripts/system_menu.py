@@ -1,6 +1,10 @@
 import subprocess
+import os
 from pathlib import Path
 import sys
+
+# Enable ANSI escape codes on Windows legacy cmd
+os.system('')
 
 ROOT = Path(__file__).resolve().parent.parent
 IGNORE_DIRS = {'assets', '.git'}
@@ -189,39 +193,159 @@ def git_sync():
         print('Lỗi khi đẩy lên GitHub. Hãy kiểm tra kết nối hoặc remote.')
 
 
+# build_root_index: ルートインデックス構築 (Xây dựng Root Dashboard Index)
+# 1. Chức năng: Tạo file index.html ở gốc dự án hiển thị danh sách module và hướng dẫn.
+# 2. Lý do: Ẩn các file hệ thống, hiển thị Dashboard chuyên nghiệp.
+# 3. Lưu ý: Chỉ bao gồm các module thư mục, giao diện Bảng đen / Dark Mode.
+def build_root_index(module_dirs):
+    title = 'RBW Dashboard - System Center'
+    lines = [
+        '<!DOCTYPE html>',
+        '<html lang="vi">',
+        '<head>',
+        '  <meta charset="UTF-8" />',
+        '  <meta name="viewport" content="width=device-width, initial-scale=1.0" />',
+        f'  <title>{title}</title>',
+        '  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Fira+Code&display=swap" rel="stylesheet">',
+        '  <style>',
+        '    :root {',
+        '      --bg-dark: #121212;',
+        '      --bg-board: #1e1e1e;',
+        '      --accent: #4af626;',
+        '      --text-main: #e0e0e0;',
+        '      --text-muted: #858585;',
+        '      --border: #333;',
+        '      --card-bg: #1f1f1f;',
+        '    }',
+        '    body { font-family: "Inter", sans-serif; background-color: var(--bg-dark); color: var(--text-main); margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }',
+        '    header { width: 100%; background: #000; padding: 30px 0; text-align: center; border-bottom: 2px solid var(--accent); box-shadow: 0 4px 20px rgba(74, 246, 38, 0.15); }',
+        '    h1 { margin: 0; font-size: 2.5rem; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; }',
+        '    .container { max-width: 1200px; width: 90%; margin: 40px auto; display: grid; grid-template-columns: 1fr 400px; gap: 40px; }',
+        '    @media(max-width: 900px) { .container { grid-template-columns: 1fr; } }',
+        '    .modules-section { display: flex; flex-direction: column; gap: 20px; }',
+        '    .module-card { background: var(--card-bg); border-left: 5px solid var(--accent); border-radius: 8px; padding: 25px; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 6px rgba(0,0,0,0.3); border-top: 1px solid var(--border); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }',
+        '    .module-card:hover { transform: translateY(-4px); box-shadow: 0 10px 25px rgba(0,0,0,0.5); }',
+        '    .module-card h2 { margin-top: 0; margin-bottom: 10px; color: #fff; font-size: 1.5rem; }',
+        '    .module-card a { display: inline-block; margin-top: 15px; padding: 10px 20px; background: rgba(74,246,38,0.1); border: 1px solid var(--accent); color: var(--accent); text-decoration: none; border-radius: 6px; font-weight: 600; transition: all 0.2s; }',
+        '    .module-card a:hover { background: var(--accent); color: #000; box-shadow: 0 0 15px rgba(74,246,38,0.4); }',
+        '    .blackboard { background: #1a1a1a; border: 12px solid #3e2723; border-radius: 8px; padding: 25px; font-family: "Fira Code", monospace; box-shadow: inset 0 0 20px rgba(0,0,0,0.8), 0 10px 20px rgba(0,0,0,0.5); position: relative; height: fit-content; }',
+        '    .blackboard::after { content: ""; position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); width: 80%; height: 10px; background: #5d4037; border-radius: 0 0 8px 8px; }',
+        '    .blackboard h3 { color: #f8b195; border-bottom: 1px dashed #555; padding-bottom: 10px; margin-top: 0; font-size: 1.3rem; text-align: center; }',
+        '    .instruction-step { margin-bottom: 20px; font-size: 0.95rem; line-height: 1.6; color: #d4d4d4; }',
+        '    .highlight { color: var(--accent); font-weight: bold; }',
+        '    .cmd-box { background: #000; padding: 10px; border-radius: 6px; color: #f6d365; display: inline-block; margin-top: 8px; border: 1px solid #333; font-size: 0.9rem; }',
+        '  </style>',
+        '</head>',
+        '<body>',
+        '  <header>',
+        '    <h1>Rikkei Bootcamp Workspace</h1>',
+        '    <p style="color: var(--text-muted); font-size: 1.1rem; margin-top: 10px;">Central Learning Dashboard</p>',
+        '  </header>',
+        '  <div class="container">',
+        '    <div class="modules-section">',
+    ]
+
+    if not module_dirs:
+        lines.append('      <div class="module-card"><h2>Chưa có module nào</h2><p>Hãy tạo các thư mục bắt đầu bằng Module_.</p></div>')
+    else:
+        for mdir in sorted(module_dirs):
+            name_display = mdir.name.replace('_', ' ')
+            lines.extend([
+                '      <div class="module-card">',
+                f'        <h2>{name_display}</h2>',
+                f'        <p>Truy cập vào các phiên học và bài tập của {name_display}.</p>',
+                f'        <a href="{mdir.name}/index.html">Vào Module →</a>',
+                '      </div>'
+            ])
+
+    lines.extend([
+        '    </div>',
+        '    <div class="blackboard-section">',
+        '      <div class="blackboard">',
+        '        <h3>📋 HƯỚNG DẪN ĐỒNG BỘ</h3>',
+        '        <div class="instruction-step">',
+        '          1. Mở Terminal / Command Prompt tại thư mục dự án.',
+        '        </div>',
+        '        <div class="instruction-step">',
+        '          2. Chạy tệp lệnh Menu Hệ Thống:<br/>',
+        '          <div class="cmd-box">.\\run_menu.bat</div>',
+        '        </div>',
+        '        <div class="instruction-step">',
+        '          3. Nhập số tương ứng trên <span class="highlight">Bảng Đen CLI</span>:',
+        '          <ul style="padding-left: 20px; list-style-type: square; color: #a8e6cf; margin-top: 10px;">',
+        '            <li style="margin-bottom: 8px;"><b>Phím 1</b>: Cập nhật dữ liệu bài tập mới vào Dashboard.</li>',
+        '            <li style="margin-bottom: 8px;"><b>Phím 2</b>: Thêm nút Quay Lại cho các bài tập.</li>',
+        '            <li><b>Phím 3</b>: Đẩy toàn bộ tiến độ lên GitHub.</li>',
+        '          </ul>',
+        '        </div>',
+        '        <div class="instruction-step" style="color: #ff8b94; font-style: italic; margin-top: 30px; font-size: 0.85rem; border-top: 1px solid #333; padding-top: 15px;">',
+        '          *Lưu ý: Không thể chạy trực tiếp từ trình duyệt vì lý do bảo mật. Vui lòng thao tác trên Terminal.*',
+        '        </div>',
+        '      </div>',
+        '    </div>',
+        '  </div>',
+        '</body>',
+        '</html>'
+    ])
+    
+    root_index = ROOT / 'index.html'
+    root_index.write_text('\n'.join(lines), encoding='utf-8')
+    return root_index
+
+
 # main: メイン処理(めいんしょり) (Hàm xử lý chính)
 # 1. Chức năng: Khởi chạy menu CLI tương tác cho phép chọn các chức năng hệ thống.
 # 2. Lý do: Đóng vai trò điểm neo điều khiển trung tâm của toàn bộ script.
 # 3. Lưu ý: Sử dụng vòng lặp while True để duy trì menu.
 def main():
+    # ANSI Colors
+    RESET = '\033[0m'
+    GREEN = '\033[92m'
+    YELLOW = '\033[93m'
+    CYAN = '\033[96m'
+    RED = '\033[91m'
+    BOLD = '\033[1m'
+    BOARD_BG = '\033[40m'
+    
     while True:
-        print('\n=== Rikkei Bootcamp System Menu ===')
-        print('1. Đồng bộ các bài tập mới vào index.html của module')
-        print('2. Thêm nút "← Quay lại Dashboard" cho các HTML chưa có')
-        print('3. Đồng bộ các module lên GitHub')
-        print('0. Thoát')
-        choice = input('Chọn số (0-3): ').strip()
+        print(BOARD_BG + GREEN + BOLD + '\n' + '='*65 + RESET)
+        print(BOARD_BG + CYAN + BOLD + '       🎓 RIKKEI BOOTCAMP - SYSTEM MENU (BẢNG ĐEN) 🎓      ' + RESET)
+        print(BOARD_BG + GREEN + BOLD + '='*65 + RESET)
+        print(BOARD_BG + YELLOW + '  [1] ' + RESET + BOARD_BG + 'Đồng bộ bài tập mới vào Dashboard (Root & Module)      ' + RESET)
+        print(BOARD_BG + YELLOW + '  [2] ' + RESET + BOARD_BG + 'Thêm nút "← Quay lại Dashboard" cho các file HTML        ' + RESET)
+        print(BOARD_BG + YELLOW + '  [3] ' + RESET + BOARD_BG + 'Đồng bộ tiến độ lên GitHub (Git Sync)                  ' + RESET)
+        print(BOARD_BG + RED + '  [0] ' + RESET + BOARD_BG + 'Thoát                                                  ' + RESET)
+        print(BOARD_BG + GREEN + BOLD + '-'*65 + RESET)
+        choice = input(CYAN + '👉 Chọn số (0-3): ' + RESET).strip()
 
         if choice == '1':
             modules = get_module_dirs()
             if not modules:
-                print('Không tìm thấy module nào.')
+                print(RED + '❌ Không tìm thấy module nào.' + RESET)
                 continue
+            
+            # 1. Tạo Root Dashboard
+            root_index_path = build_root_index(modules)
+            print(GREEN + f'✅ Đã cập nhật Root Dashboard: {root_index_path}' + RESET)
+            
+            # 2. Tạo Module Dashboard
             for module_dir in modules:
                 index_path = build_module_index(module_dir)
-                print(f'Đã cập nhật {index_path}')
+                print(GREEN + f'✅ Đã cập nhật {index_path}' + RESET)
         elif choice == '2':
             updated = add_back_buttons()
             if not updated:
-                print('Không tìm thấy file HTML mới cần thêm nút.')
+                print(YELLOW + '⚠️ Không tìm thấy file HTML mới cần thêm nút.' + RESET)
             else:
                 for path in updated:
-                    print(f'Đã thêm nút cho {path}')
+                    print(GREEN + f'✅ Đã thêm nút cho {path}' + RESET)
         elif choice == '3':
             git_sync()
         elif choice == '0':
-            print('Thoát.')
+            print(YELLOW + '👋 Thoát.' + RESET)
             break
+        else:
+            print(RED + '❌ Lựa chọn không hợp lệ!' + RESET)
 
 if __name__ == '__main__':
     main()

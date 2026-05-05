@@ -1,0 +1,39 @@
+/* Thiết lập chung */
+.services-section {
+  background-color: #000; /* Nền đen */
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+/* KHUNG HIỂN THỊ ĐIỆN THOẠI (1 CỘT) */
+.services-container {
+  display: flex;
+  flex-direction: column; /* Xếp theo cột dọc */
+  gap: 20px; /* Khoảng cách giữa các thẻ là 20px */
+  margin-top: 30px;
+}
+
+.card {
+  padding: 30px;
+  border-radius: 12px;
+  text-align: left;
+}
+
+.card-orange { background-color: #E2852B; }
+.card-purple { background-color: #7B35D0; }
+.card-blue { background-color: #2B62E2; }
+
+/* KHI MÀN HÌNH LỚN HƠN 768px (MÁY TÍNH / TABLET NGANG) */
+@media screen and (min-width: 768px) {
+  
+  .services-container {
+    flex-direction: row; /* Đổi từ cột dọc sang hàng ngang */
+    justify-content: center; /* Căn giữa 3 thẻ */
+  }
+
+  .card {
+    flex: 1; /* Chia đều không gian cho cả 3 thẻ */
+    max-width: 350px; /* Khống chế chiều rộng tối đa để không bị quá to */
+  }
+}
