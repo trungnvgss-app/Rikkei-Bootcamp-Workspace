@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Sinh Viên</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background-color: #f4f7f6;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        h2, h3 {
+            color: #333;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 5px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 15px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        button.btn-danger {
+            background-color: #dc3545;
+        }
+        button:hover {
+            opacity: 0.9;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Quản Lý Sinh Viên Cơ Bản</h2>
+
+        <h3>1. Thêm Sinh Viên Mới</h3>
+        <div class="form-group">
+            <label>Mã sinh viên (ID):</label>
+            <input type="text" id="studentId" placeholder="Nhập ID...">
+        </div>
+        <div class="form-group">
+            <label>Tên sinh viên:</label>
+            <input type="text" id="studentName" placeholder="Nhập tên...">
+        </div>
+        <div class="form-group">
+            <label>Tuổi:</label>
+            <input type="number" id="studentAge" placeholder="Nhập tuổi...">
+        </div>
+        <button onclick="addStudent()">Thêm Vào Danh Sách</button>
+
+        <br><br>
+
+        <h3>2. Xóa Sinh Viên</h3>
+        <div class="form-group">
+            <label>Nhập ID của sinh viên cần xóa:</label>
+            <input type="text" id="deleteId" placeholder="Ví dụ: SV01">
+        </div>
+        <button class="btn-danger" onclick="deleteStudent()">Xóa Sinh Viên</button>
+
+        <br><br>
+
+        <h3>3. Danh Sách Sinh Viên</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tên Sinh Viên</th>
+                    <th>Tuổi</th>
+                </tr>
+            </thead>
+            <tbody id="studentList">
+                </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+    <div style="margin-top: 30px; padding-top: 10px; border-top: 1px solid #ccc;">
+      <a class="back-dashboard" href="../../index.html" style="display:inline-block;padding:10px 16px;background:#d32f2f;color:#fff;border-radius:6px;text-decoration:none;font-weight:600;">← Quay lại Dashboard</a>
+    </div>
+  </body>
+</html>
