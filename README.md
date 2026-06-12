@@ -17,11 +17,38 @@
   - `Session_01_HTML_Basic/` - Bài tập HTML cơ bản.
   - `Session_02_HTML_Table_Form/` - Bài tập bảng và biểu mẫu.
   - `Session_03_CSS_Basic/` - Bài tập CSS cơ bản.
+  - `Session_04_CSS_Selector/` - Bài tập CSS Selectors.
+  - `Session_05_CSS_Basic_Properties/` - Bài tập CSS Properties.
+  - `Session_06_CSS/` - Bài tập CSS nâng cao.
+  - `Session_07_Flexbox/` - Bài tập Flexbox.
   - `Session_08_JS_Basic/` - Bài tập JS cơ bản.
+  - `Session_09_CSS_Layout/` - Bài tập CSS Layout.
+  - `Session_10_JavaScript/` - Bài tập JavaScript cơ bản.
+  - `Session_11_Control_Statement/` - Bài tập câu lệnh điều khiển.
+  - `Session_12_JavaCsript_System/` - Bài tập hệ thống JavaScript.
+  - `Session_13_Array/` - Bài tập Mảng (Array).
+  - `Session_14_Objectt/` - Bài tập Đối tượng (Object).
+  - `Session_15_Array_Object/` - Bài tập kết hợp Mảng và Đối tượng.
+  - `Session_16_Funtion_Array_Method/` - Bài tập Hàm và Phương thức mảng.
 - `Module_2_Database/` - Lưu trữ file SQL, ERD, tài liệu Database.
 - `Module_3_Java_Core/` - Dự án Java Maven/Gradle cho Module 3.
 - `Module_4_FE_IT/` - Tài liệu, sơ đồ thuật toán, Markdown lý thuyết.
 - `Module_5_Java_Web/` - Dự án Spring Boot cho Module 5.
+- `scripts/` - Chứa các script tiện ích tự động hóa (Python, Batch).
+  - `add_back_buttons.py` - Script thêm nút quay lại Dashboard.
+  - `system_menu.py` - Menu điều khiển hệ thống bằng terminal.
+- `About_Dataset/` - Chứa các dữ liệu tham khảo hoặc bài tập nâng cao.
+- `scratch/` - Thư mục nháp.
+- `Draft-Tag.md` - Ghi chú nháp về thẻ (tags).
+
+## Thư mục gốc ngoài (d:\Rikkei-Bootcamp-Workspace)
+
+Bên cạnh thư mục chính, workspace cấp ngoài cùng chứa các tài liệu bổ sung như:
+- `MIGRATION_GUIDE.md` - Hướng dẫn chuyển đổi môi trường làm việc sang máy mới.
+- `VSCODE_CODING_DIRECTIVES.md` - Hướng dẫn quy chuẩn code trên VS Code.
+- `VSCODE_SHORTCUTS_PRO.md` - Danh sách phím tắt chuyên nghiệp cho VS Code.
+- `responsive_tips.md` - Mẹo Responsive Web Design.
+- `9.0 LUYỆN THI/` & `HN_JS220313_BS_[NGUYEN_VAN_TRUNG]/` - Chứa các dự án luyện thi, bài tập Hackathon.
 
 ## Hướng dẫn sử dụng
 
@@ -58,6 +85,11 @@ Ngoài ra, bạn có thể chạy riêng chức năng thêm nút bằng:
 
 ```powershell
 python scripts\add_back_buttons.py
+```
+
+Hoặc sử dụng tập lệnh Batch:
+```powershell
+.\run_menu.bat
 ```
 
 ## Gợi ý tiện ích mở rộng VS Code
