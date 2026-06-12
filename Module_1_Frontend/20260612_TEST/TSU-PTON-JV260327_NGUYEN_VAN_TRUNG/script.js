@@ -84,20 +84,71 @@ function validateForm()
 
 //Task 5 : Thêm công việc mới 
 taskform.addEventListener("submit", function(event) {
-    event.preventDefault(); // Ngăn chặn hành vi mặc định của form (tải lại trang)
+    event.preventDefault() // Ngăn chặn hành vi mặc định của form (tải lại trang)
     if (validateForm()) { // Nếu dữ liệu hợp lệ
-        const newTask = {
-            id: autoIncrementId++, // Tự động tăng ID  
-            name: taskNameInput.value.trim(), // Lấy giá trị Tên công việc
-            user: userInput.value.trim(), // Lấy giá trị Người thực hiện
-            deadline: deadlineInput.value, // Lấy giá trị Deadline
-            status: statusInput.value // Lấy giá trị Trạng thái
-        };
-        // Thêm công việc mới vào mảng tasks
-        const tasks = getTasks();
-        tasks.push(newTask);
-        saveTasks(tasks); // Lưu vào localStorage
-        renderTasks(); // Render lại danh sách công việc
-        taskform.reset(); // Reset form
+        const tasks = getTasks(); // Lấy danh sách công việc hiện tại
+        const updateTask = taskIdInput.value !== "" ? {
+        //Nút "Lưu công việc" chuyển thành "Cập nhật". Khi nhấn "Cập nhật", tiến hành lưu các thay đổi vào mảng tasks và hiển thị lại dữ liệu mới trên bảng.
+    if (updateTask) {  
+        const index = tasks.findIndex(task => task.id === parseInt(taskIdInput.value)); // Tìm vị trí công việc cần cập nhật trong mảng
+        if (index !== -1) { // Nếu tìm thấy công việc cần cập nhật
+                       tasks[index].name = taskNameInput.value.trim();// Cập nhật tên công việc
+                       tasks[index].user = userInput.value.trim(); // Cập nhật người thực hiện
+                       tasks[index].deadline = deadlineInput.value; // Cập nhật deadline
+                       tasks[index].status = statusInput.value; // Cập nhật trạng thái
+                       saveTasks(tasks); // Lưu lại danh sách công việc sau khi cập nhật
+
+            else { // Nếu không tìm thấy công việc cần cập nhật (trường hợp này hiếm khi xảy ra vì ID được lấy từ input ẩn)
+                const newTask = {
+                    id: autoIncrementId++, // Tự động tăng ID cho công việc mới
+                    name: taskNameInput.value.trim(), // Lấy tên công việc từ input và loại bỏ khoảng trắng thừa
+                    user: userInput.value.trim(), // Lấy người thực hiện từ input và loại bỏ khoảng trắng thừa
+                    deadline: deadlineInput.value, // Lấy deadline từ input
+                    status: statusInput.value || "Chờ làm" // Lấy trạng thái từ input hoặc đặt giá trị mặc định "Chờ làm" nếu chưa chọn
+                };
+                tasks.push(newTask); // Thêm công việc mới vào mảng
+                saveTasks(tasks); // Lưu lại danh sách công việc sau khi thêm
+                renderTasks(); // Hiển thị lại danh sách công việc sau khi thêm mới
+                }
+            }
+        }
     }
-});
+
+    //Task 6 : Chức năng Sửa & Cập nhật dữ liệu
+        funtion editTask(id) {
+            const tasks = getTasks(); // Lấy danh sách công việc hiện tại
+            const taskToEdit = tasks.find(task => task.id === id); // Tìm công việc cần sửa theo ID
+            if (taskToEdit) { // Nếu tìm thấy công việc cần sửa
+                taskIdInput.value = taskToEdit.id; // Đặt giá trị ID vào input ẩn để biết đang sửa công việc nào
+                taskNameInput.value = taskToEdit.name; // Điền tên công việc vào input để người dùng có thể chỉnh sửa
+                userInput.value = taskToEdit.user; // Điền người thực hiện vào input để người dùng có thể chỉnh sửa
+                deadlineInput.value = taskToEdit.deadline; // Điền deadline vào input để người dùng có thể chỉnh sửa
+                statusInput.value = taskToEdit.status; // Điền trạng thái vào input để người dùng có thể chỉnh sửa
+                buttonSubmit.textContent = "Cập nhật"; // Đổi tên nút từ "Lưu công việc" thành "Cập nhật"
+
+
+            }
+        }
+    
+    }
+//Task 7 : Chức năng Xóa dữ liệu
+function deleteTask(id) {
+    const tasks = getTasks(); // Lấy danh sách công việc hiện tại
+    const updatedTasks = tasks.filter(task => task.id !== id); // Tạo một mảng mới chỉ chứa các công việc có ID khác với ID cần xóa
+    saveTasks(updatedTasks); // Lưu lại danh sách công việc sau khi xóa
+    renderTasks(); // Hiển thị lại danh sách công việc sau khi xóa
+}   
+
+//Task 8 : Chức năng Tìm kiếm
+function searchTasks(keyword) {
+    const tasks = getTasks(); // Lấy danh sách công việc hiện tại
+    const filteredTasks = tasks.filter(task => task.name.toLowerCase().includes(keyword.toLowerCase())); // Lọc công việc theo từ khóa tìm kiếm (không phân biệt hoa thường)
+    renderTasks(filteredTasks); // Hiển thị lại danh sách công việc sau khi lọc
+}
+
+//Task 9 : Chức năng Sắp xếp (Anpha b)
+function sortTasksByName() {
+    const tasks = getTasks(); // Lấy danh sách công việc hiện tại
+    const sortedTasks = tasks.sort((a, b) => a.name.localeCompare(b.name)); // Sắp xếp công việc theo tên (theo thứ tự chữ cái Anphla b)
+    renderTasks(sortedTasks); // Hiển thị lại danh sách công việc sau khi sắp xếp
+}
