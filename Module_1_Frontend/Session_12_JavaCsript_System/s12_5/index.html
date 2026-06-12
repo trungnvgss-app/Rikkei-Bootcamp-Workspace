@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyện Tập Vòng Lặp 2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .result-container {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            background-color: #f4f4f9;
+        }
+        /* Sử dụng pre để giữ nguyên định dạng khoảng trắng và xuống dòng cho việc in hình * */
+        pre#result {
+            font-weight: bold;
+            color: #333;
+            font-size: 1.2em;
+            font-family: "Courier New", Courier, monospace; 
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Luyện Tập Vòng Lặp (2)</h2>
+    <p>Nhấn vào các nút bên dưới để chạy từng bài tập:</p>
+
+    <button onclick="bai1()">Bài 1: In dãy Fibonacci</button>
+    <button onclick="bai2()">Bài 2: Tính giai thừa</button>
+    <button onclick="bai3()">Bài 3: In 4 tam giác vuông</button>
+    <button onclick="bai4()">Bài 4: In hình chữ nhật rỗng</button>
+    <button onclick="bai5()">Bài 5: Tính lãi ngân hàng</button>
+
+    <div class="result-container">
+        <strong>Kết quả:</strong>
+        <pre id="result">Kết quả sẽ hiện ở đây...</pre>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
