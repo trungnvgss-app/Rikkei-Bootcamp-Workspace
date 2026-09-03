@@ -13,7 +13,7 @@ const errorDeadline = document.getElementById("errorDeadline");
 const taskTableBody = document.querySelector("#taskTable tbody"); 
 const buttonSubmit = document.querySelector("button[type='submit']"); 
 
-// Task 2: Tạo cấu trúc mảng tasks & LocalStorage
+// Task 2: Khởi tạo cấu trúc mảng tasks & LocalStorage
 function getTasks() {
     const tasks = localStorage.getItem("tasks");
     return tasks ? JSON.parse(tasks) : [];
@@ -43,7 +43,7 @@ function renderTasks(tasksToRender = getTasks()) {
     });
 }
 
-// Task 4: Validate dữ liệu đầu vào
+// Task 4: Validate Form nhập liệu
 function validateForm() {
     let isValid = true;
     const today = new Date().toISOString().split("T")[0];
@@ -79,7 +79,7 @@ function validateForm() {
     return isValid;
 }
 
-// Task 5: Thêm công việc mới
+// Task 5: Thêm cộng việc mới
 taskform.addEventListener("submit", function(event) {
     event.preventDefault(); 
     
@@ -140,7 +140,7 @@ function deleteTask(id) {
     }
 } 
 
-// Task 8: Chức năng Tìm kiếm
+// Task 8: Chức năng tìm kiếm
 function searchTasks(keyword) {
     const tasks = getTasks(); 
     const filteredTasks = tasks.filter(task => 
@@ -154,13 +154,12 @@ document.getElementById("searchInput").addEventListener("input", function(e) {
     searchTasks(e.target.value);
 });
 
-// Task 9: Chức năng Sắp xếp (Anpha b)
+// Task 9: Chức năng Ssắp xếp (Anpha b)
 function sortTasksByName() {
     const tasks = getTasks(); 
     const sortedTasks = tasks.sort((a, b) => a.name.localeCompare(b.name)); 
     renderTasks(sortedTasks); 
 }
-
 document.getElementById("sortSelect").addEventListener("change", function(e) {
     if (e.target.value === "name") sortTasksByName();
     else renderTasks(); 
